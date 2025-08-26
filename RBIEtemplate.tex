@@ -1,0 +1,373 @@
+%
+% Template for RBIE papers in LaTeX
+%
+
+% The above language combination is for this template document only.
+% You should use one of the following:
+\documentclass[english, spanish, brazilian]{RBIEarticle} % for papers in portuguese
+%\documentclass[brazilian, spanish, english]{RBIEarticle} % for papers in english
+%\documentclass[brazilian, english, spanish]{RBIEarticle} % for papers in spanish
+
+% Papers in Portuguese or Spanish may require the following lines:
+\usepackage[utf8]{inputenc} % chooses UTF-8 as the main character set
+\usepackage[T1]{fontenc} % for correct syllable separation in accented words
+
+% The next two statements are needed for the example table in this document
+% (i.e. you don't necessarily need them in your own paper)
+\usepackage{colortbl}
+\definecolor{gray}{gray}{.8}
+
+% Citations and references (Biblatex)
+\usepackage[style=apa]{biblatex}
+\usepackage{csquotes}
+\addbibresource{references.bib}
+
+% Here goes the paper main title
+\title{Previsão da evasão de alunos de cursos de computação no Brasil usando Aprendizado de Máquina}
+
+% If the manuscript is written in English, then this element must be removed.
+\titleinenglish{Predicting student dropout rates in computing courses in Brazil using Machine Learning}
+
+% If the manuscript is written in English, then this element must be removed.
+\titleinspanish{Predicción de las tasas de abandono estudiantil en cursos de informática en Brasil mediante aprendizaje automático}
+
+% Here goes the paper author information (repeat for two or more authors)
+\author{%
+	\parbox{6cm}{%
+		Gustavo Ferreira Botelho de Sena\\
+		%EACH - USP\\
+            % TODO >>> Adicionar depois <<<
+		%ORCID: \href{https://orcid.org/0000-0000-0000-0000}{0000-0000-0000-0000}\\
+		%<author1@my-email>
+	}
+	\parbox{6cm}{%
+		Renan Moura Nascimento\\
+		%EACH - USP\\
+            % TODO >>> Adicionar depois <<<
+		%ORCID: \href{https://orcid.org/0000-0000-0000-0000}{0000-0000-0000-0000}\\
+		%<author1@my-email>
+	}
+        \newline
+        \parbox{6cm}{%
+		Rony dos Santos Teles\\
+		%EACH - USP\\
+            % TODO >>> Adicionar depois <<<
+		%ORCID: \href{https://orcid.org/0000-0000-0000-0000}{0000-0000-0000-0000}\\
+		%<author1@my-email>
+	}
+        \parbox{6cm}{%
+		Silvio Marcelo F. Bertoldo\\
+		%EACH - USP\\
+            % TODO >>> Adicionar depois <<<
+		%ORCID: \href{https://orcid.org/0000-0000-0000-0000}{0000-0000-0000-0000}\\
+		%<author1@my-email>
+	}
+}
+
+\Submission{20/08/2025}
+% TODO >>> A ser feito depois <<<
+%\First_round_notif{dd/Mmm/yyyy}
+%\New_version{dd/Mmm/yyyy}
+%\Second_round_notif{dd/Mmm/yyyy}
+%\Camera_ready{dd/Mmm/yyyy}
+%\Edition_review{dd/Mmm/yyyy}
+%\Available_online{dd/Mmm/yyyy}
+%\Published{dd/Mmm/yyyy}
+
+% Here goes the page heading information
+\heading{Sena, G. F. B., Nascimento, R. M., Teles, R. S., Bertoldo, S. M. F.	\\
+Bertoldo et al.
+}{RBIE v.VV – yyyy}
+
+% And finally here goes the citation information
+% >>> A ser feito depois <<<
+\citeas{Last name, Initials., \ldots \& Last name, Initials.  (Year). Article title in the original language. Revista Brasileira de Informática na Educação, vol, pp-pp. https://doi.org/10.5753/rbie.yyyy.id}
+
+%====================================================================
+%\hyphenpenalty=10000
+%\setcounter{page}{01}
+
+\begin{document}
+\maketitle
+
+% If the manuscript is written in English, then this element must be removed.
+\begin{otherlanguage}{brazilian}
+\begin{abstract}
+A evasão de alunos é um problema complexo com impactos financeiros e sociais para as instituições de ensino e para os próprios estudantes. A predição desse fenômeno é uma tarefa desafiadora, e o aprendizado de máquina (Machine Learning – ML) tem se mostrado uma ferramenta eficaz para obtenção de informações sobre essa questão.
+Este estudo tem como objetivo principal aplicar e avaliar diferentes técnicas de ML em uma base de dados pública para desenvolver um modelo preditivo da evasão de alunos em cursos de computação no Brasil. A metodologia adotada inclui quatro fases: coleta de dados, pré-processamento, modelagem e avaliação dos modelos. Os dados serão extraídos dos microdados do Censo da Educação Superior do Inep, que é a fonte mais completa de informações sobre o ensino superior no país.
+Na fase de pré-processamento, as variáveis demográficas, socioeconômicas e acadêmicas serão selecionadas, e a variável alvo será definida como a situação de matrícula do aluno. Posteriormente, os dados serão limpos, os atributos mais relevantes serão selecionados e as variáveis categóricas serão transformadas. A base será dividida em conjuntos de treinamento e teste para garantir a robustez da avaliação.
+Para a modelagem, o problema será tratado como uma classificação binária, e serão empregados diversos algoritmos de aprendizado supervisionado, incluindo Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors (KNN), Naïve Bayes, Support Vector Machine (SVM) e Redes Neurais. A escolha desses algoritmos permitirá uma análise comparativa para identificar o de melhor desempenho.
+Na fase final, a eficácia de cada modelo será avaliada utilizando métricas como acurácia, precisão, recall, F1-Score e Área Sob a Curva ROC (AUC). A comparação desses resultados permitirá determinar qual algoritmo oferece a melhor performance preditiva para o problema da evasão, contribuindo assim para o desenvolvimento de estratégias preventivas mais eficazes.
+\keywords Evasão estudantil, Ensino superior, Aprendizado de máquina, Mineração de dados, Classificação binária, Algoritmos supervisionados, Regressão Logística, Random Forest, Redes Neurais.
+\end{abstract}
+\end{otherlanguage}
+
+\begin{otherlanguage}{english}
+\begin{abstract}
+% TODO >>> Será feito depois <<<
+<Here comes the abstract of the paper in English. The abstract should summarize the contents of the manuscript and should contain at least 150 and at most 300~words long and must be written in italics, Times~10, justified, with no special indentation and no spacing before or after.>
+\keywords <Abstract must be followed by 3 to 10 keywords. The keywords should be justified with a line space single, no special indentation, with no spacing before and spacing of exactly 24-points after. The text should be set in Times 10-point font size and in italic font style. Please use semi-colon as a separator. Keywords must be title cased.>
+\end{abstract}
+\end{otherlanguage}
+
+% If the manuscript is written in English, then this element must be removed.
+\begin{otherlanguage}{spanish}
+\begin{abstract}
+% TODO >>> A ser feito depois <<<
+<Aquí viene el resumen del artículo en español. El resumen debe resumir el contenido del manuscrito y debe contener un mínimo de 150 y un máximo de 300~palabras y debe estar escrito en cursiva, Times~10, justificado, sin sangría especial y sin espacio antes o después.>
+\keywords <El resumen debe ir seguido de 3 a 10 palabras clave. Las palabras clave deben estar justificadas con un espacio de línea simple, sin sangría especial, sin espacios antes y con un espacio de exactamente 24 puntos después. El texto debe configurarse fuente Times con tamaño de 10 puntos y en estilo de fuente cursiva. Utilice punto y coma como separador. Las palabras clave deben comenzar con una letra mayúscula.>
+\end{abstract}
+\end{otherlanguage}
+
+\pagebreak
+
+%====================================================================
+
+\section{Introdução}
+A evasão de alunos é um problema persistente e complexo que afeta as instituições de ensino superior em todo o mundo. Este fenômeno, especialmente no Brasil, gera consequências significativas, incluindo prejuízos financeiros para as instituições e a perda de capital humano se qualificando para o mercado de trabalho. A identificação dos fatores que levam à evasão é uma tarefa desafiadora, e a aplicação de métodos tradicionais de análise tem se mostrado insuficiente para lidar com a vasta quantidade de dados disponíveis.
+Diante desse cenário, a mineração de dados e o aprendizado de máquina (ML) emergem como ferramentas promissoras para melhor entender a evasão estudantil. A utilização dessas técnicas permite às instituições identificar precocemente os alunos em risco de evasão, possibilitando a implementação de ações preventivas e de suporte para mantê-los estudando.
+Neste contexto, o presente estudo tem como objetivo principal aplicar e avaliar diferentes técnicas de aprendizado de máquina, como regressão logística, árvores de decisão, Random Forest, K-Nearest Neighbors (KNN), Naive Bayes, Support Vector Machine (SVM) e redes neurais em uma base de dados pública para desenvolver um modelo preditivo da evasão de alunos em cursos de computação no Brasil. A pesquisa utilizará os microdados do Censo da Educação Superior, realizado pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep), a base de dados mais completa sobre o ensino superior brasileiro, para construir e validar modelos robustos. Ao explorar e comparar a eficácia desses algoritmos, espera-se contribuir com um modelo que possa auxiliar as instituições de ensino na formulação de estratégias mais eficazes para a retenção de seus estudantes.
+
+
+
+\section{Fundamentos Teóricos}
+
+\subsection{Regressão Logística}
+A Regressão Logística é um algoritmo supervisionado voltado para classificação, transformando combinações lineares de atributos em probabilidades por meio da função sigmoide. Observações são classificadas com base em um limiar (geralmente 0,5), adequado para classificação binária ou multinomial. Assumem-se independência entre observações, baixa multicolinearidade e relação linear entre variáveis independentes e log-odds. É simples, eficiente e de fácil interpretação, sendo referência inicial em tarefas de classificação.
+
+\subsection{Árvores de Decisão}
+As Árvores de Decisão são algoritmos supervisados usados para classificação e regressão, estruturados em nós internos (testes), ramos (resultados) e folhas (classes finais). A escolha de atributos é feita via Ganho de Informação ou Índice de Gini, que reduzem a impureza dos nós. Um desafio comum é o sobreajuste, mitigado por técnicas de pre-pruning ou post-pruning. São intuitivas, fáceis de implementar e base para algoritmos como Random Forest e Gradient Boosting.
+
+\subsection{Random Forest}
+Random Forest combina múltiplas árvores de decisão, construídas a partir de subconjuntos aleatórios de dados e atributos, agregando previsões por votação ou média. Reduz o sobreajuste, fornece importância às variáveis e é robusto e preciso. Vantagens: alta acurácia, resistência ao overfitting e manejo de dados faltantes. Desvantagens: custo computacional elevado e menor interpretabilidade. É um dos algoritmos de referência em aprendizado supervisionado.
+
+\subsection{k-Nearest Neighbors (kNN)}
+O kNN é um algoritmo não paramétrico para classificação e regressão, baseado na proximidade de pontos no espaço de atributos. A classe de um ponto é definida pela maioria de seus k vizinhos mais próximos, ou a média de seus valores (regressão). É um lazy learner, armazenando exemplos de treinamento e realizando cálculos apenas na predição. Escolher o valor de k é crítico, com trade-off entre overfitting e viés. Simples, interpretável e flexível, é referência em problemas supervisionados.
+
+\subsection{Naïve Bayes}
+O Naïve Bayes aplica o Teorema de Bayes assumindo independência entre atributos. Estima a probabilidade posterior de uma classe dado um conjunto de atributos e seleciona a maior (MAP). É eficiente, rápido e útil em filtragem de spam, análise de sentimentos e classificação textual. Principais variantes: Gaussian: atributos contínuos com distribuição normal; Multinomial: frequência de eventos, comum em textos; Bernoulli: atributos binários, usado em documentos.
+ Simplicidade e baixo custo computacional tornam-no amplamente usado.
+
+\subsection{Support Vector Machines (SVM)}
+SVMs buscam construir um hiperplano que maximize a margem entre classes. Support vectors são os pontos mais próximos do hiperplano que definem sua posição. Quando os dados não são linearmente separáveis, aplica-se o kernel trick, projetando-os em espaço de maior dimensão. Kernels comuns: Linear, Polinomial, RBF e Sigmoide. Alta capacidade preditiva e bom desempenho em alta dimensionalidade, mas exige ajuste de hiperparâmetros (C, γ) e pode ser computacionalmente custoso em grandes bases.
+
+\subsection{Redes Neurais – Perceptron Multicamadas (MLP)}
+O MLP é uma rede neural feedforward para classificação e regressão, com camadas de neurônios de entrada, ocultas e de saída. Cada neurônio combina entradas ponderadas e aplica funções de ativação (sigmoid, ReLU, tanh), permitindo modelar relações não lineares complexas.
+ Seu treinamento é feito usando backpropagation com gradiente descendente, ajustando pesos para minimizar a função de perda.
+ Tem por características ser sensível à normalização, ao tamanho da rede e à taxa de aprendizado; propenso a overfitting (mitigado por regularização, dropout ou early stopping).
+ Muito aplicado em reconhecimento de padrões, previsão de séries temporais, classificação de dados tabulares, recomendação e NLP.
+
+
+% TODO >>> Guardar para possivelmente usar futuramente, sub-sub-sessões
+%\subsubsection{Section Titles}
+
+% TODO >>> Guardado sobre tabelas <<<
+%Tables (e.g., \autoref{tab:one}) must be positioned preferably
+
+\iffalse % Usado para que o compilador ignore.
+         % Essencialmente comentar este trecho
+    \begin{table}[h]
+    	\caption{Caption table 1}
+    	\label{tab:one}
+    	\centering\footnotesize%
+    	\begin{tabular}{|c|c|}
+    		\hline
+    		\rowcolor{gray} \textbf{Example column 1} & \textbf{Example column 2}\\
+    		\hline
+    		Example text 1 & Example text 2\\
+    		\hline
+    	\end{tabular}
+    \end{table}
+
+
+    % TODO >>> Comentado para possível uso futuro, figuras <<<
+    % Figures (e.g., \autoref{fig:one}) must appear inside the designated margins. 
+    
+    \begin{figure}[h]
+    	\centerline{\includegraphics[scale=0.25]{newlogo.png}}
+    	\caption{Caption figure 1}
+    	\label{fig:one}
+    \end{figure}
+
+    % TODO >>> Comentável para possível uso futuro, equações
+    % Special attention with equations as some characters may be lost as well as formatting. Equations (e.g., \autoref{eq:one}) should be placed on a separate line, numbered and centered. 
+    
+    \begin{equation}
+    	a = b + c
+    	\label{eq:one}
+    \end{equation}
+
+    % TODO >>> Usado para quando quiser adicionar código ao artigo <<<
+    % Program listing commands in text (e.g., \autoref{code:one}) should be set in 9-point Courier New,
+    \begin{code}[h]
+    	\begin{lstlisting}
+    begin
+        Writeln('Hello World!!');
+    end.
+    	\end{lstlisting}
+    	\caption{Example of code}
+    	\label{code:one}
+    \end{code}
+
+
+    % Subsessão sobre citações.
+    \subsection{In-Text Citations and Reference List}
+    
+    When you use others' ideas in your paper, you should credit them with an in-text citation. In-text citations must follow APA 7 Style, which consist of the surname of the authors and the year of publication. More on \href{https://apastyle.apa.org/}{Writing In-Text Citations in APA Style}, please refer to \href{https://libguides.brenau.edu/APA7}{APA Citation Guide (7th edition)}.
+    
+    The  \href{https://libguides.brenau.edu/APA7}{APA Citation Guide (7th edition)} explains why and what to cite, citing references in text, the purpose of the reference list and how to build the reference list. It is possible to find more information on  \href{https://libguides.brenau.edu/APA7}{APA Citation Guide (7th edition)} and on how to deal with missing information as well as class notes, class lectures, presentations, social media, among other sources. Some sample references are provided by the  \href{https://libguides.brenau.edu/APA7}{APA Citation Guide (7th edition)}.
+    
+    The reference list must be ordered alphabetically. References should be set to 12-point, justified, with a single line space, 6-point additional spacing after and hanging indent of 0.75 centimeter.
+    
+    Citation 1 \parencite{Baker2011}
+    
+    Citation 2 \parencite{Seffrin2013}
+    
+    Citation 3 \parencite{Brasil2008}
+    
+    Citation 4 \parencite{Kautzman2015}
+    
+    Citation 5 \parencite{Sweller1991}
+    
+    Citation 6 \parencite{Clark2006}
+    
+    Citation 7 \parencite{Mason2012}
+\fi % Fim do bloco comentado
+
+\section{Trabalhos Relacionados}
+A evasão de alunos é um tema de grande relevância, e a aplicação de técnicas de aprendizado de máquina para prever esse fenômeno tem sido o foco de diversos estudos. Um trabalho notável é a dissertação de Jesus (2024), que investigou a evasão universitária utilizando dados do Censo da Educação Superior do Inep. Nesse estudo, o autor empregou algoritmos clássicos de classificação para construir modelos preditivos e observou que cerca de 30\% dos estudantes do ensino superior desistem do curso ou da instituição. Jesus também ressaltou uma limitação importante: os modelos desenvolvidos para uma instituição de ensino não são facilmente reutilizáveis por outras.
+Em outra pesquisa, Silva (2022) realizou uma comparação de técnicas de aprendizado de máquina com o objetivo de prever a evasão de estudantes em instituições públicas de ensino superior no Brasil. Utilizando dados do Inep, a autora descobriu que o algoritmo Random Forest apresentou o melhor desempenho, alcançando uma taxa de acerto de aproximadamente 80\%. As variáveis mais influentes para a previsão de evasão incluíram a idade do aluno, a participação em atividades extracurriculares e a carga horária total do curso.
+Complementando a literatura, Jesus e Gusmão (2024) conduziram um mapeamento sistemático para analisar a aplicação de mineração de dados e aprendizado de máquina na classificação da evasão escolar. O estudo concluiu que a maioria das pesquisas se concentra no ensino superior presencial e que os algoritmos baseados em árvores de decisão são os mais utilizados nessa área.
+
+
+\iffalse % Usado para que o compilador ignore.
+         % Essencialmente comentar este trecho
+    \section*{Acknowledgements}
+    %Place the acknowledgements only in the final version of the manuscript, after acceptance. They should be placed before the references section without numbering.
+    Our special thanks to Rafael Bohrer Ávila, Matheus Segalotto and Bruno Fagundes da Silva for their help with this latex template. 
+\fi
+
+
+\section{Método}
+
+\subsection{Método de Pesquisa}
+Este estudo tem como objetivo principal desenvolver e avaliar modelos de Machine Learning (ML) para a previsão da evasão de alunos no ensino superior. Para tal, a metodologia adotada segue um processo estruturado de Mineração de Dados, que foi dividido em quatro fases principais: 1) Coleta de Dados; 2) Pré-processamento e Transformação dos Dados; 3) Modelagem uso de Algoritmos de Machine Learning; e 4) Análise e Avaliação dos Modelos.
+
+\subsection{Primeira Fase: Coleta de Dados}
+Os dados utilizados nesta pesquisa serão extraídos dos microdados do Censo da Educação Superior, disponibilizados publicamente pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). Esta base de dados é a mais completa sobre o ensino superior no Brasil, contendo uma vasta gama de atributos sobre os alunos, os cursos e as instituições de ensino. 
+Serão selecionadas variáveis demográficas, socioeconômicas e acadêmicas, como idade, gênero, etnia, tipo de escola de origem, modalidade de ensino e situação de vínculo do aluno com o curso. A variável alvo para o nosso modelo será a situação de matrícula do aluno, onde o fenômeno da evasão será identificado a partir de categorias como "Desvinculado" ou "Transferido".
+
+\subsection{Segunda Fase: Pré-processamento e Transformação dos Dados}
+Nesta fase, os dados brutos coletados serão preparados para a aplicação dos algoritmos de ML. As principais tarefas a serem realizadas incluem:
+\begin{itemize}
+  \item Limpeza de Dados: Tratamento de valores ausentes (seja por remoção ou imputação de dados) e correção de inconsistências.
+  \item Seleção de Atributos (Feature Selection): Análise para identificar e selecionar as variáveis mais relevantes para a previsão da evasão, a fim de reduzir a dimensionalidade e otimizar o desempenho dos modelos.
+  \item Transformação de Dados: Conversão de variáveis categóricas (como gênero ou estado civil) em formato numérico, utilizando técnicas como One-Hot Encoding, para que possam ser melhor processadas pelos algoritmos.
+  \item Divisão da Base: O conjunto de dados será dividido aleatoriamente em duas amostras: uma de treinamento (tipicamente 80\% dos dados), utilizada para construir os modelos, e uma de teste (20\% restantes), utilizada para avaliar sua performance em dados não vistos.
+\end{itemize}
+
+\subsection{Terceira Fase: Modelagem e Algoritmos de Machine Learning}
+A previsão da evasão será abordada como um problema de classificação binária, onde o modelo deverá classificar cada aluno como "propenso a evadir" ou "não propenso a evadir". Para construir os modelos preditivos, serão empregados e comparados diversos algoritmos de aprendizado supervisionado, selecionados com base em sua popularidade e eficácia em problemas de classificação. 
+Os algoritmos a serem utilizados incluem: Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors (KNN), Naïve Bayes, Support Vector Machine (SVM) e Redes Neurais. A escolha de múltiplos algoritmos permitirá uma análise comparativa robusta para identificar o modelo com melhor desempenho para o contexto dos dados utilizados.
+
+\subsection{Quarta Fase: Análise e Avaliação dos Modelos}
+A eficácia de cada modelo gerado será avaliada utilizando o conjunto de dados de teste. Para interpretar e comparar os resultados, serão empregadas métricas de avaliação padrão para problemas de classificação. A Matriz de Confusão será a base para o cálculo das seguintes métricas:
+
+\begin{itemize}
+    \item Acurácia: Percentual geral de classificações corretas.
+    \item Precisão: Dentre todas as classificações positivas, quantas estavam corretas.
+    \item Recall (Sensibilidade): A capacidade do modelo de identificar corretamente os casos de evasão.
+    \item F1-Score: Média harmônica entre precisão e recall, útil para dados desbalanceados.
+    \item Área Sob a Curva ROC (AUC): Mede a capacidade do modelo de distinguir entre as duas classes.
+\end{itemize}
+
+A comparação dessas métricas permitirá determinar qual algoritmo apresenta a melhor performance preditiva para o problema da evasão de alunos, respondendo assim ao objetivo principal desta pesquisa.
+
+
+\section{Cronograma}
+
+
+\subsection{Fase 1: Coleta de Dados (Semanas 1-2)}
+
+\begin{itemize}
+    \item Obtenção dos microdados do Censo da Educação Superior do Inep.
+    \item Identificação e seleção das variáveis demográficas, socioeconômicas e acadêmicas de interesse.
+    \item Definição da variável alvo (situação de matrícula do aluno) para identificar a evasão.
+\end{itemize}
+
+
+\subsection{Fase 2: Pré-processamento e Transformação dos Dados (Semanas 3-6)}
+
+\begin{itemize}
+    \item Limpeza dos dados: tratamento de valores ausentes e inconsistências.
+    \item Seleção de atributos (Feature Selection) para reduzir a dimensionalidade e otimizar o desempenho dos modelos.
+    \item Conversão de variáveis categóricas (como gênero ou estado civil) em formato numérico (e.g., One-Hot Encoding).
+    \item Divisão da base de dados em conjuntos de treinamento (tipicamente 80\% dos dados) e teste (20\% restantes).
+\end{itemize}
+
+
+\subsection{Fase 3: Modelagem e Algoritmos de Machine Learning (Semanas 7-12)}
+
+\begin{itemize}
+    \item A previsão da evasão será abordada como um problema de classificação binária.
+    \item Implementação e treinamento dos algoritmos de classificação: Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors (KNN), Naïve Bayes, Support Vector Machine (SVM) e Redes Neurais.
+    \item Ajuste dos hiperparâmetros para otimizar o desempenho de cada modelo.
+\end{itemize}
+
+
+\subsection{Fase 4: Análise e Avaliação dos Modelos (Semanas 13-15)}
+
+\begin{itemize}
+    \item Avaliação de cada modelo com o conjunto de dados de teste.
+    \item Cálculo das métricas de avaliação de desempenho: Acurácia, Precisão, Recall (Sensibilidade), F1-Score e Área Sob a Curva ROC (AUC).
+    \item Análise comparativa dos resultados para determinar o algoritmo com a melhor performance preditiva.
+    \item Redação das conclusões do estudo com base na análise dos resultados.
+\end{itemize}
+
+
+\section*{Referências}
+% Adicionado de maneira manual inicialmente, será movido para o references.bib nas entregas futuras
+JESUS, Jeferson Andrade de. Investigação da evasão estudantil por meio da mineração de dados e aprendizagem de máquina. 2024. 256 f.. Dissertação (Mestrado em Ciência da Computação) – Programa de Pós-Graduação em Ciência da Computação, Universidade Federal de Sergipe, São Cristóvão, 2024.
+
+SILVA, Jailma Januário da. Uma comparação de técnicas de Aprendizado de Máquina para predição de evasão de estudantes no ensino público superior. 2022. 77 p.. Dissertação (Mestrado em Ciências) – Programa de Pós-Graduação em Sistemas de Informação, Escola de Artes, Ciências e Humanidades, Universidade de São Paulo, São Paulo, 2022.
+
+JESUS, Jeferson Andrade de; GUSMÃO, Renê Pereira de. Investigação da evasão estudantil por meio da mineração de dados e aprendizagem de máquina: um mapeamento sistemático. Revista Brasileira de Informática na Educação, v. 32, p. 807-841, 2024. DOI: 10.5753/rbie.2024.3466
+
+
+%====================================================================
+
+%\printbibliography
+%See the guidelines for metadata and references:
+%https://sol.sbc.org.br/journals/index.php/rbie/libraryFiles/downloadPublic/71
+%====================================================================
+
+\iffalse % Usado para que o compilador ignore.
+         % Essencialmente comentar este trecho
+     \section*{Appendix 1}
+    \label{apendice1}
+    
+    If any, the appendix should appear directly after the references without numbering, and not on a new page.
+    
+    \begin{enumerate}
+        \item[A] When the reference has a Link
+        \begin{itemize}
+            \item Make a clickable link on the respective URL (if you are using MS-Word, use the tool Insert Hyperlink, informing the URL).
+        \end{itemize}
+        \item[B] Allow readers to search for the reference on Google Scholar
+        \begin{itemize}
+            \item Copy the title of the reference and put in between ``\%22'', including the ``+'' character between each word: http://scholar.google.com/scholar?q=\%22PASTE+TITLE+\\HERE\%22\&hl=en\&lr=\&btnG=Search
+            \item If it is a common title, you may add the author, such as in: \\http://scholar.google.com/ scholar?q=PASTE+AUTHOR+HERE+\%22PASTE+TITLE\\+HERE\%22\&hl=en\&lr=\&btnG=Search
+            \item Or you may use the publication year (YEAR) to restrict the results, such as in:\\ http://scholar.google.com/scholar?
+            q=PASTE+AUTHOR+HERE+\%22PASTE+TITLE\\+HERE\%22\&hl=en\&lr=\&btnG=Search \&as\_ylo=YEAR\&as\_yhi=YEAR
+            \item It is highly advisable to confirm if the link is correct (and if Google Scholar presents a correct result).
+            \item Include the term ``[GS SEARCH]'' at the end of each reference and make “GS SEARCH” a hyperlink with the URL just created.
+        \end{itemize}
+        \item[C] Allow readers to access references with DOI
+        \begin{itemize}
+            \item Add DOI hyperlink (make it clickable) using the corresponding URL (the URL can be created adding ``http://doi.org/'' in front of the DOI hyperlink).
+        \end{itemize}
+    \end{enumerate}
+\fi
+
+
+\end{document}
