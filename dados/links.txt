@@ -1,0 +1,11 @@
+[1] Microdados do Censo da Educação Superior 2023
+https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2023.zip
+
+[2] Portal de Dados Abertos MEC (PNP) - Microdados Matrículas 2023
+https://dadosabertos.mec.gov.br/images/conteudo/pnp/2023/microdados_matriculas_2023.csv
+
+
+
+
+[3] Dados de alunos da graduação dos Institutos Federais (baseado em [2])
+https://drive.google.com/drive/folders/1BctzeQd842Af25zTAduBCNPb0WBpCqPF?usp=sharing
