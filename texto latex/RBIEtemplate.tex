@@ -23,13 +23,13 @@
 \addbibresource{references.bib}
 
 % Here goes the paper main title
-\title{Previsão da evasão de alunos de cursos de computação no Brasil usando Aprendizado de Máquina}
+\title{Previsão da evasão de alunos de cursos de computação nas instituições federais do Brasil usando Aprendizado de Máquina}
 
 % If the manuscript is written in English, then this element must be removed.
-\titleinenglish{Predicting student dropout rates in computing courses in Brazil using Machine Learning}
+\titleinenglish{Predicting student dropout rates in computing courses in Brazil's federal institutions using Machine Learning}
 
 % If the manuscript is written in English, then this element must be removed.
-\titleinspanish{Predicción de las tasas de abandono estudiantil en cursos de informática en Brasil mediante aprendizaje automático}
+\titleinspanish{Predicción de las tasas de abandono estudiantil en los cursos de informática de las instituciones federales de Brasil mediante el aprendizaje automático}
 
 % Here goes the paper author information (repeat for two or more authors)
 \author{%
@@ -64,7 +64,7 @@
 	}
 }
 
-\Submission{20/08/2025}
+\Submission{17/09/2025}
 % TODO >>> A ser feito depois <<<
 %\First_round_notif{dd/Mmm/yyyy}
 %\New_version{dd/Mmm/yyyy}
@@ -77,7 +77,7 @@
 % Here goes the page heading information
 \heading{Sena, G. F. B., Nascimento, R. M., Teles, R. S., Bertoldo, S. M. F.	\\
 Bertoldo et al.
-}{RBIE v.VV – yyyy}
+}{RBIE v.VV – 2025}
 
 % And finally here goes the citation information
 % >>> A ser feito depois <<<
@@ -93,12 +93,8 @@ Bertoldo et al.
 % If the manuscript is written in English, then this element must be removed.
 \begin{otherlanguage}{brazilian}
 \begin{abstract}
-A evasão de alunos é um problema complexo com impactos financeiros e sociais para as instituições de ensino e para os próprios estudantes. A predição desse fenômeno é uma tarefa desafiadora, e o aprendizado de máquina (Machine Learning – ML) tem se mostrado uma ferramenta eficaz para obtenção de informações sobre essa questão.
-Este estudo tem como objetivo principal aplicar e avaliar diferentes técnicas de ML em uma base de dados pública para desenvolver um modelo preditivo da evasão de alunos em cursos de computação no Brasil. A metodologia adotada inclui quatro fases: coleta de dados, pré-processamento, modelagem e avaliação dos modelos. Os dados serão extraídos dos microdados do Censo da Educação Superior do Inep, que é a fonte mais completa de informações sobre o ensino superior no país.
-Na fase de pré-processamento, as variáveis demográficas, socioeconômicas e acadêmicas serão selecionadas, e a variável alvo será definida como a situação de matrícula do aluno. Posteriormente, os dados serão limpos, os atributos mais relevantes serão selecionados e as variáveis categóricas serão transformadas. A base será dividida em conjuntos de treinamento e teste para garantir a robustez da avaliação.
-Para a modelagem, o problema será tratado como uma classificação binária, e serão empregados diversos algoritmos de aprendizado supervisionado, incluindo Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors (KNN), Naïve Bayes, Support Vector Machine (SVM) e Redes Neurais. A escolha desses algoritmos permitirá uma análise comparativa para identificar o de melhor desempenho.
-Na fase final, a eficácia de cada modelo será avaliada utilizando métricas como acurácia, precisão, recall, F1-Score e Área Sob a Curva ROC (AUC). A comparação desses resultados permitirá determinar qual algoritmo oferece a melhor performance preditiva para o problema da evasão, contribuindo assim para o desenvolvimento de estratégias preventivas mais eficazes.
-\keywords Evasão estudantil, Ensino superior, Aprendizado de máquina, Mineração de dados, Classificação binária, Algoritmos supervisionados, Regressão Logística, Random Forest, Redes Neurais.
+A evasão de alunos no ensino superior é um desafio que traz impactos às políticas governamentais, às instituições de ensino, aos estudantes evadidos e à própria sociedade. Este estudo tem como objetivo aplicar e comparar diferentes técnicas de aprendizado de máquina na predição da evasão em cursos de computação no Brasil, utilizando os microdados da Plataforma Nilo Peçanha. O processo metodológico compreende as etapas de coleta, pré-processamento, modelagem e avaliação, considerando variáveis demográficas, socioeconômicas e acadêmicas. Para o problema, serão empregados algoritmos supervisionados como Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors, Naïve Bayes, Support Vector Machine e Redes Neurais. A performance dos modelos será analisada a partir de métricas padrão, incluindo acurácia, precisão, recall, F1-Score e AUC. Espera-se identificar o algoritmo com melhor desempenho, contribuindo para um melhor entendimento deste fenômeno complexo visando o desenvolvimento de estratégias de retenção estudantil mais eficazes.
+\keywords Evasão estudantil, Ensino superior, Universidades federais, Brasil, Aprendizado de máquina, Mineração de dados, Classificação binária, Algoritmos supervisionados, Regressão Logística, Random Forest, Redes Neurais.
 \end{abstract}
 \end{otherlanguage}
 
@@ -124,10 +120,13 @@ Na fase final, a eficácia de cada modelo será avaliada utilizando métricas co
 %====================================================================
 
 \section{Introdução}
-A evasão de alunos é um problema persistente e complexo que afeta as instituições de ensino superior em todo o mundo. Este fenômeno, especialmente no Brasil, gera consequências significativas, incluindo prejuízos financeiros para as instituições e a perda de capital humano se qualificando para o mercado de trabalho. A identificação dos fatores que levam à evasão é uma tarefa desafiadora, e a aplicação de métodos tradicionais de análise tem se mostrado insuficiente para lidar com a vasta quantidade de dados disponíveis.
-Diante desse cenário, a mineração de dados e o aprendizado de máquina (ML) emergem como ferramentas promissoras para melhor entender a evasão estudantil. A utilização dessas técnicas permite às instituições identificar precocemente os alunos em risco de evasão, possibilitando a implementação de ações preventivas e de suporte para mantê-los estudando.
-Neste contexto, o presente estudo tem como objetivo principal aplicar e avaliar diferentes técnicas de aprendizado de máquina, como regressão logística, árvores de decisão, Random Forest, K-Nearest Neighbors (KNN), Naive Bayes, Support Vector Machine (SVM) e redes neurais em uma base de dados pública para desenvolver um modelo preditivo da evasão de alunos em cursos de computação no Brasil. A pesquisa utilizará os microdados do Censo da Educação Superior, realizado pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep), a base de dados mais completa sobre o ensino superior brasileiro, para construir e validar modelos robustos. Ao explorar e comparar a eficácia desses algoritmos, espera-se contribuir com um modelo que possa auxiliar as instituições de ensino na formulação de estratégias mais eficazes para a retenção de seus estudantes.
+A evasão de alunos é um problema persistente e multifacetado que impacta instituições de ensino superior em todo o mundo, gerando consequências tanto sociais quanto econômicas. No Brasil, a situação é particularmente preocupante: estima-se que uma parcela significativa dos estudantes não conclui os cursos em que ingressaram, resultando em prejuízos financeiros para as instituições, perda de recursos públicos investidos em políticas educacionais e diminuição da formação e oferta de profissionais qualificados para o mercado de trabalho. A identificação dos fatores que levam à evasão estudantil é, portanto, um desafio estratégico para o planejamento institucional e para a formulação de políticas públicas voltadas à permanência dos alunos.
 
+As abordagens tradicionais de análise estatística, embora de grande relevância, apresentam limitações diante da crescente complexidade e volume de dados disponíveis. Nesse cenário, a mineração de dados e o aprendizado de máquina emergem como ferramentas promissoras, capazes de explorar grandes bases de informação e identificar padrões que auxiliem na previsão do comportamento estudantil. Tais técnicas permitem às instituições reconhecer, de forma antecipada, os estudantes mais propensos à evasão e, assim, implementar ações preventivas direcionadas.
+
+Diversos estudos nacionais e internacionais têm explorado o uso de modelos preditivos aplicados à evasão, empregando algoritmos de classificação como Regressão Logística, Árvores de Decisão e Random Forest. No entanto, grande parte dessas pesquisas utiliza dados do Censo da Educação Superior do Inep, que, embora abrangentes, não contemplam especificidades de determinados contextos institucionais ou cursos. O presente trabalho diferencia-se por empregar os microdados da Plataforma Nilo Peçanha (PNP), considerada a principal base sobre a Rede Federal de Educação Profissional, Científica e Tecnológica, permitindo uma análise mais direcionada da evasão em cursos de computação desta parcela relevante do ensino superior brasileiro.
+
+Dessa forma, este estudo tem como objetivo aplicar e avaliar comparativamente diferentes algoritmos de aprendizado supervisionado, incluindo Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors, Naïve Bayes, Support Vector Machine e Redes Neurais para desenvolver modelos preditivos de evasão. A partir da análise de métricas como acurácia, precisão, recall, F1-Score e AUC (Área sob a curva), espera-se identificar o modelo de melhor desempenho e, assim, contribuir para a elaboração de estratégias de retenção mais eficazes, capazes de mitigar os efeitos da evasão estudantil no ensino superior em computação brasileiro.
 
 
 \section{Fundamentos Teóricos}
@@ -236,8 +235,13 @@ O MLP é uma rede neural feedforward para classificação e regressão, com cama
 
 \section{Trabalhos Relacionados}
 A evasão de alunos é um tema de grande relevância, e a aplicação de técnicas de aprendizado de máquina para prever esse fenômeno tem sido o foco de diversos estudos. Um trabalho notável é a dissertação de Jesus (2024), que investigou a evasão universitária utilizando dados do Censo da Educação Superior do Inep. Nesse estudo, o autor empregou algoritmos clássicos de classificação para construir modelos preditivos e observou que cerca de 30\% dos estudantes do ensino superior desistem do curso ou da instituição. Jesus também ressaltou uma limitação importante: os modelos desenvolvidos para uma instituição de ensino não são facilmente reutilizáveis por outras.
+
 Em outra pesquisa, Silva (2022) realizou uma comparação de técnicas de aprendizado de máquina com o objetivo de prever a evasão de estudantes em instituições públicas de ensino superior no Brasil. Utilizando dados do Inep, a autora descobriu que o algoritmo Random Forest apresentou o melhor desempenho, alcançando uma taxa de acerto de aproximadamente 80\%. As variáveis mais influentes para a previsão de evasão incluíram a idade do aluno, a participação em atividades extracurriculares e a carga horária total do curso.
+
 Complementando a literatura, Jesus e Gusmão (2024) conduziram um mapeamento sistemático para analisar a aplicação de mineração de dados e aprendizado de máquina na classificação da evasão escolar. O estudo concluiu que a maioria das pesquisas se concentra no ensino superior presencial e que os algoritmos baseados em árvores de decisão são os mais utilizados nessa área.
+
+O diferencial do presente trabalho em relação aos estudos relacionados está na utilização dos microdados da Plataforma Nilo Peçanha (PNP) para prever a evasão em cursos de computação, enquanto pesquisas anteriores focaram principalmente em dados do Censo da Educação Superior do Inep. Além disso, este estudo propõe uma avaliação comparativa mais ampla, aplicando e confrontando diversos algoritmos de aprendizado de máquina - desde modelos clássicos, como Regressão Logística e Árvores de Decisão, até abordagens mais complexas, como Redes Neurais - buscando identificar aquele com melhor desempenho preditivo. Dessa forma, amplia-se a robustez da análise e a aplicabilidade dos resultados para apoiar estratégias de retenção estudantil.
+
 
 
 \iffalse % Usado para que o compilador ignore.
@@ -254,7 +258,7 @@ Complementando a literatura, Jesus e Gusmão (2024) conduziram um mapeamento sis
 Este estudo tem como objetivo principal desenvolver e avaliar modelos de Machine Learning (ML) para a previsão da evasão de alunos no ensino superior. Para tal, a metodologia adotada segue um processo estruturado de Mineração de Dados, que foi dividido em quatro fases principais: 1) Coleta de Dados; 2) Pré-processamento e Transformação dos Dados; 3) Modelagem uso de Algoritmos de Machine Learning; e 4) Análise e Avaliação dos Modelos.
 
 \subsection{Primeira Fase: Coleta de Dados}
-Os dados utilizados nesta pesquisa serão extraídos dos microdados do Censo da Educação Superior, disponibilizados publicamente pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). Esta base de dados é a mais completa sobre o ensino superior no Brasil, contendo uma vasta gama de atributos sobre os alunos, os cursos e as instituições de ensino. 
+Como anteriormente descrito, os dados utilizados nesta pesquisa serão extraídos do PNP. Esta base de dados é a mais completa sobre o ensino federal no Brasil, contendo uma vasta gama de atributos por aluno, os cursos e as instituições de ensino. 
 Serão selecionadas variáveis demográficas, socioeconômicas e acadêmicas, como idade, gênero, etnia, tipo de escola de origem, modalidade de ensino e situação de vínculo do aluno com o curso. A variável alvo para o nosso modelo será a situação de matrícula do aluno, onde o fenômeno da evasão será identificado a partir de categorias como "Desvinculado" ou "Transferido".
 
 \subsection{Segunda Fase: Pré-processamento e Transformação dos Dados}
@@ -285,7 +289,6 @@ A comparação dessas métricas permitirá determinar qual algoritmo apresenta a
 
 
 \section{Cronograma}
-
 
 \subsection{Fase 1: Coleta de Dados (Semanas 1-2)}
 
@@ -323,6 +326,46 @@ A comparação dessas métricas permitirá determinar qual algoritmo apresenta a
     \item Análise comparativa dos resultados para determinar o algoritmo com a melhor performance preditiva.
     \item Redação das conclusões do estudo com base na análise dos resultados.
 \end{itemize}
+
+
+\section{Resultados Parciais}
+O processo inicial de análise concentrou-se na preparação e filtragem da base de dados proveniente da Plataforma Nilo Peçanha (PNP). A base original continha dados de diferentes níveis educacionais, englobando estudantes do ensino fundamental, médio, cursos técnicos e de especialização técnica, de graduação, tecnólogo e licenciatura, até mestrados stricto e lato sensu e doutoramento. A filtragem inicial focou em separar as graduações, tecnólogos e licenciaturas, apresentando 343.277 observações compreendendo o período de 2010 a 2024, representando a totalidade de matrículas da Rede Federal nesse nível de ensino neste período de tempo.
+
+Em seguida, delimitou-se o escopo ao Eixo Tecnológico – coluna presente na base de dados da PNP – “Informação e Comunicação”. Compõem este eixo tecnológico os seguintes cursos: Agrocomputação, Análise e Desenvolvimento de Sistemas, Ciência da Computação, Engenharia de Computação, Engenharia de Telecomunicações, Gestão de Tecnologia da Informação, Informática, Jogos Digitais, Redes de Computadores, Sistemas de Informação, Sistemas de Telecomunicações, Sistemas para Internet e Telemática. Nestes, um conjunto compreendendo também os cursos de computação, resultou em 54.627 registros.
+
+Contudo, identificou-se que nem todos os cursos desse eixo possuíam aderência direta ao objeto de estudo. Assim, foram analisados os cursos por Subeixo Tecnológico – outra das colunas da base PNP –, com destaque para o subeixo “Informática”, que concentrava em si 52.249 registros. Os cursos sendo Análise e Desenvolvimento de Sistemas, Ciência da Computação, Gestão de Tecnologia da Informação, Informática, Jogos Digitais, Redes de Computadores, Sistemas de Informação e Sistemas para Internet.
+
+Além disso, observou-se a existência do curso denominado “Computação”, situado fora do referido eixo, mas incluído manualmente por sua relevância. A partir dessas decisões metodológicas, separando os cursos de cunho mais administrativo da área de tecnologia, chegou-se a um banco com conjunto final de dados de 42.803 registros, composto pelos seguintes cursos: Análise e Desenvolvimento de Sistemas, Ciência da Computação, Computação, Informática, Jogos Digitais, Redes de Computadores e Sistemas de Informação. Essa etapa de refinamento foi fundamental para garantir maior coerência entre os dados utilizados e o objetivo central do estudo.
+
+Na sequência, procedeu-se ao pré-processamento no ambiente Jupyter Notebook, envolvendo a limpeza da base, a seleção de atributos relevantes e a transformação de variáveis categóricas em representações numéricas adequadas aos algoritmos de aprendizado de máquina. Os dados foram então particionados em conjuntos de treinamento (80\%) e teste (20\%), assegurando a robustez da avaliação dos modelos.
+
+Com a base preparada, foram conduzidos os primeiros experimentos utilizando algoritmos de classificação supervisionada, incluindo Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors, Naïve Bayes, Support Vector Machine (SVM) e Redes Neurais do tipo MLP. Os resultados preliminares apontam para um desempenho satisfatório de modelos baseados em árvores, em especial o Random Forest, que apresentou métricas de acurácia e F1-Score superiores em relação a outros algoritmos testados. Embora ainda sujeitos a ajustes de hiperparâmetros e análise mais aprofundada, tais resultados corroboram achados de estudos anteriores que destacam a robustez dessa classe de modelos em cenários de predição de evasão.
+
+\begin{figure}[h]
+    \centerline{\includegraphics[scale=0.8]{images/evasao_por_raca.png}}
+    \caption{Gráfico preliminar relacionando raça/etnia à evasão. Aqui, os dados compõem todos cursos de Graduação (excluindo Tecnólogos e Licenciaturas) da rede federal, sem separação dos cursos de computação.}
+    \label{fig:one}
+\end{figure}
+
+\begin{figure}[h]
+    \centerline{\includegraphics[scale=0.60]{images/correlacao_variaveis_num_com_target.jpeg}}
+    \caption{Gráfico relacionando as variáveis disponíveis na base de dados da PNP à evasão. Compõe todos os cursos da Graduação (excluindo Tecnólogos e Licenciaturas) da rede federal, não somente computação.}
+    \label{fig:one}
+\end{figure}
+
+
+
+
+\section{Discussões e Conclusões}
+Até o presente estágio, os resultados obtidos permitem destacar três pontos centrais. Em primeiro lugar, o processo de redução e seleção da base de dados foi essencial para delimitar o objeto de análise, assegurando que os registros analisados correspondam de fato a cursos diretamente ligados à computação. Essa etapa, embora trabalhosa, reforça a importância da curadoria de dados como pré-condição para análises preditivas confiáveis.
+
+Em segundo lugar, a exploração inicial dos algoritmos de aprendizado de máquina demonstrou que modelos mais complexos, como redes neurais, exigem maior calibragem para alcançarem resultados competitivos, enquanto algoritmos mais consolidados, como o Random Forest, já apresentam desempenho elevado de maneira mais estável. Esse achado dialoga com a literatura, que frequentemente aponta algoritmos baseados em árvores como especialmente eficazes na predição da evasão estudantil.
+
+Por fim, destaca-se que os resultados parciais obtidos a partir da base PNP validam a viabilidade do uso de aprendizado de máquina para antecipar a evasão nos cursos de computação da Rede Federal, levando em conta que os dados dispostos são de indivíduos, frente à base que envolvia somente instituições, do Censo do Ensino Superior do Inep. Ressalta-se que as análises ainda estão em andamento e que etapas posteriores de ajuste fino de modelos, validação cruzada e análise de importância das variáveis serão determinantes para consolidar as conclusões finais.
+
+Dessa forma, até o momento, pode-se afirmar que a abordagem adotada mostra-se promissora não apenas para compreender padrões de evasão, mas também para subsidiar a formulação de estratégias institucionais de intervenção precoce, direcionadas aos grupos mais vulneráveis identificados no processo analítico.
+
+
 
 
 \section*{Referências}
