@@ -26,6 +26,8 @@
 \usepackage{tabularx}
 \usepackage{float}
 
+\usepackage{graphicx}
+
 \addbibresource{references.bib}
 
 % Here goes the paper main title
@@ -66,7 +68,7 @@
 	}
 }
 
-\Submission{20/10/2025}
+\Submission{18/11/2025}
 % >>> A ser feito depois <<<
 %\First_round_notif{dd/Mmm/yyyy}
 %\New_version{dd/Mmm/yyyy}
@@ -85,7 +87,7 @@ Bertoldo et al.
 % >>> A ser feito depois <<<
 \citeas{Sena, G. F. B., Nascimento, R. M., Teles, R. S., Bertoldo, S. M. F. (2025). Previsão da evasão de alunos de cursos de computação nas instituições federais do Brasil usando Aprendizado de Máquina. Revista Brasileira de Informática na Educação, vol, pp-pp. https://doi.org/10.5753/rbie.yyyy.id}
 
-%====================================================================
+%=============================================================
 %\hyphenpenalty=10000
 %\setcounter{page}{01}
 
@@ -95,7 +97,7 @@ Bertoldo et al.
 % If the manuscript is written in English, then this element must be removed.
 \begin{otherlanguage}{brazilian}
 \begin{abstract}
-A evasão de alunos no ensino superior é um desafio que traz impactos às políticas governamentais, às instituições de ensino, aos estudantes evadidos e à sociedade. Este estudo tem como objetivo aplicar e comparar diferentes técnicas de aprendizado de máquina na predição da evasão em cursos de computação no Brasil, utilizando os microdados da Plataforma Nilo Peçanha das instituições federais brasileiras. O processo metodológico compreende as etapas de coleta, pré-processamento, modelagem e avaliação, considerando variáveis demográficas, socioeconômicas e acadêmicas. Para o problema, serão empregados algoritmos supervisionados como Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors, Naïve Bayes, Support Vector Machine e Redes Neurais. A performance dos modelos será analisada a partir de métricas padrão, incluindo acurácia, precisão, recall, F1-Score e área sob a curva (AUC). Espera-se identificar o algoritmo com melhor desempenho, contribuindo para um melhor entendimento deste fenômeno complexo visando apoiar o desenvolvimento de estratégias de retenção estudantil mais eficazes.
+A evasão de alunos no ensino superior é um desafio que traz impactos às políticas governamentais, instituições de ensino, aos estudantes evadidos e à sociedade. Este estudo teve por objetivo aplicar e comparar diferentes técnicas de aprendizado de máquina na predição da evasão em cursos de computação no Brasil, fazendo uso dos microdados da Plataforma Nilo Peçanha, das instituições federais brasileiras. O processo metodológico compreendeu as etapas de coleta, pré-processamento, modelagem e avaliação dos melhores modelos a partir de métricas padrão: acurácia, precisão, recall, F1-score e área sob a curva (AUC). Foram consideradas variáveis demográficas, socioeconômicas e acadêmicas, empregando os seguintes algoritmos supervisionados: Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors, Naïve Bayes, Support Vector Machine e Redes Neurais. Após isso, os três modelos melhor colocados foram submetidos a análise mais profunda, realizando ajuste fino por GridSearchCV para sua reavaliação. O modelo de melhor resultado foi o Random Forest, com F1-score de 0,704. Espera-se que as descobertas da presente análise contribuam para um melhor entendimento deste fenômeno complexo, visando apoiar o desenvolvimento de estratégias de retenção estudantil mais eficazes.
 \keywords EEvasão estudantil, Ensino superior, Universidades federais, Brasil, Aprendizado de máquina, Mineração de dados, Classificação binária, Algoritmos supervisionados, Regressão Logística, Random Forest, Redes Neurais.
 \end{abstract}
 \end{otherlanguage}
@@ -103,7 +105,7 @@ A evasão de alunos no ensino superior é um desafio que traz impactos às polí
 \newpage
 \begin{otherlanguage}{english}
 \begin{abstract}
-Student dropout in higher education is a challenge that impacts government policies, educational institutions, students, and society as a whole. This study aims to apply and compare different machine learning techniques to predict dropout rates in computing programs in Brazil, using microdata from the Nilo Peçanha Platform of Brazilian federal institutions. The methodological process comprises the stages of data collection, pre-processing, modeling, and evaluation, considering demographic, socioeconomic, and academic variables. Supervised algorithms such as Logistic Regression, Decision Trees, Random Forest, K-Nearest Neighbors, Naive Bayes, Support Vector Machines, and Neural Networks will be employed to solve this problem. The models' performance will be analyzed using standard metrics, including accuracy, precision, recall, F1-score, and area under the curve (AUC). The aim is to identify the best-performing algorithm, contributing to a better understanding of this complex phenomenon and supporting the development of more effective student retention strategies.
+Student dropout in higher education is a challenge that affects government policies, educational institutions, the dropout students themselves, and society. This study aims to apply and compare different machine learning techniques to predict dropout rates in computer science courses in Brazil, using microdata from the Plataforma Nilo Peçanha's Brazilian federal institutions. The methodological process consisted of four stages: data collection, preprocessing, modeling, and evaluation of the best models based on standard metrics: accuracy, precision, recall, F1-score, and area under the curve (AUC). Demographic, socioeconomic, and academic variables were considered, utilizing the following supervised algorithms: Logistic Regression, Decision Trees, Random Forest, K-Nearest Neighbors, Naïve Bayes, Support Vector Machine, and Neural Networks. After this, the three best-performing models were subjected to further analysis, performing fine-tuning using GridSearchCV for their re-evaluation. The model with the best results was the Random Forest, with an F1-score of 0.704. It is expected that the findings of this analysis will contribute to a deeper understanding of this complex phenomenon, thereby supporting the development of more effective student retention strategies.
 \keywords SStudent Dropout, Higher Education, Federal Universities, Brazil, Machine Learning, Data Mining, Binary Classification, Supervised Algorithms, Logistic Regression, Random Forest, Neural Networks.
 \end{abstract}
 \end{otherlanguage}
@@ -111,181 +113,29 @@ Student dropout in higher education is a challenge that impacts government polic
 % If the manuscript is written in English, then this element must be removed.
 \begin{otherlanguage}{spanish}
 \begin{abstract}
-La deserción estudiantil en la educación superior es un desafío que impacta las políticas gubernamentales, las instituciones educativas, los estudiantes y la sociedad en su conjunto. Este estudio tiene como objetivo aplicar y comparar diferentes técnicas de aprendizaje automático para predecir las tasas de deserción en programas de informática en Brasil, utilizando microdatos de la Plataforma Nilo Peçanha de instituciones federales brasileñas. El proceso metodológico comprende las etapas de recolección de datos, preprocesamiento, modelado y evaluación, considerando variables demográficas, socioeconómicas y académicas. Se emplearán algoritmos supervisados como Regresión Logística, Árboles de Decisión, Bosque Aleatorio, K-Vecinos Más Cercanos, Bayes Ingenuo, Máquinas de Vectores de Soporte y Redes Neuronales para resolver este problema. El desempeño de los modelos se analizará utilizando métricas estándar, incluyendo exactitud, precisión, recuperación, puntuación F1 y área bajo la curva (AUC). El objetivo es identificar el algoritmo con mejor desempeño, contribuyendo a una mejor comprensión de este complejo fenómeno y apoyando el desarrollo de estrategias de retención estudiantil más efectivas.
+El abandono escolar en la educación superior es un desafío que afecta las políticas gubernamentales, las instituciones educativas, los propios estudiantes que abandonan sus estudios y la sociedad. Este estudio tiene como objetivo aplicar y comparar diferentes técnicas de aprendizaje automático para predecir las tasas de abandono en carreras de informática en Brasil, utilizando microdatos de la Plataforma Nilo Peçanha de instituciones federales brasileñas. El proceso metodológico constó de cuatro etapas: recopilación de datos, preprocesamiento, modelado y evaluación de los mejores modelos con base en métricas estándar: exactitud, precisión, exhaustividad, puntuación F1 y área bajo la curva (AUC). Se consideraron variables demográficas, socioeconómicas y académicas, utilizando los siguientes algoritmos de aprendizaje supervisado: regresión logística, árboles de decisión, bosque aleatorio, k-vecinos más cercanos, Naive Bayes, máquina de vectores de soporte y redes neuronales. Posteriormente, los tres modelos con mejor desempeño se sometieron a un análisis más profundo, realizando un ajuste fino mediante GridSearchCV para su reevaluación. El modelo con los mejores resultados fue el de bosque aleatorio, con una puntuación F1 de 0,704. Se espera que los resultados de este análisis contribuyan a una comprensión más profunda de este complejo fenómeno, apoyando así el desarrollo de estrategias más eficaces para la retención de estudiantes.
 \keywords AAbandono estudiantil, Educación superior, Universidades federales, Brasil, Aprendizaje automático, Minería de datos, Clasificación binaria, Algoritmos supervisados, Regresión logística, Bosque aleatorio, Redes neuronales.
 \end{abstract}
 \end{otherlanguage}
 
 \pagebreak
 
-%===================================================================
+%=============================================================
 
 \section{Introdução}
-A evasão de alunos é um problema persistente e multifacetado que impacta instituições de ensino superior em todo o mundo, com impactos sociais e econômicos. No Brasil, a situação é particularmente preocupante: uma parcela significativa dos estudantes não conclui os cursos em que ingressam, resultando em prejuízos financeiros para as instituições, perda de recursos públicos investidos em políticas educacionais e diminuição da oferta de profissionais qualificados para o mercado de trabalho.  Conseguir identificar os fatores que levam à evasão estudantil é um desafio estratégico para o planejamento institucional e para a formulação de políticas públicas voltadas à permanência dos alunos.
+A evasão de alunos é um problema persistente e multifacetado que impacta instituições de ensino superior em todo o mundo, com demasiado impacto social e econômico. No Brasil, a situação é particularmente preocupante: uma parcela significativa dos estudantes não conclui os cursos em que ingressam, resultando em prejuízos financeiros para as instituições, perda de recursos públicos investidos em políticas educacionais e diminuição da oferta de profissionais qualificados para o mercado de trabalho.  Conseguir identificar os fatores que levam à evasão estudantil é um desafio estratégico para o planejamento institucional e para a formulação de políticas públicas voltadas à permanência dos alunos.
 
-As abordagens tradicionais de análise estatística, embora de grande relevância, apresentam limitações diante da crescente complexidade e volume de dados disponíveis. Nesse cenário, a mineração de dados e o aprendizado de máquina destacam-se, capazes de explorar grandes bases de informação e ajudar a detectar padrões que possam indicar possível evasão. Tais técnicas entregariam, então, um grande poder às instituições, permitindo a elas conhecer de antemão quais estudantes estariam em risco de evasão, permitindo desenhar políticas e estratégias que fomentassem a permanência estudantil.
+Reconhecemos as abordagens tradicionais de análise estatística, que contribuem de maneira muito relevante, mas com o volume de dados que temos acesso, outro caminho torna-se possível, diante da crescente complexidade e volume de dados disponíveis: a mineração de dados e o aprendizado de máquina destacam-se, capazes de explorar grandes bases de informação e ajudar a detectar padrões que possam indicar possível evasão. Tais técnicas podem vir a entregar um grande poder às instituições, permitindo a elas conhecer de antemão quais estudantes estariam em risco de evasão, permitindo desenhar políticas e estratégias que fomentassem a permanência estudantil.
 
 Diversos estudos nacionais e internacionais têm explorado o uso de modelos preditivos aplicados à evasão, empregando algoritmos de classificação como Regressão Logística, Árvores de Decisão e Random Forest. Grande parte dessas pesquisas utiliza dados do Censo da Educação Superior do Inep, que, embora abrangentes, não contemplam especificidades dos contextos institucionais e cursos. O presente trabalho diferencia-se ao fazer uso dos microdados da Plataforma Nilo Peçanha (PNP), considerada a principal base sobre a Rede Federal de Educação Profissional, Científica e Tecnológica (RFEPCT) brasileira, permitindo um bom enfoque ao problema da evasão em cursos de computação brasileiros de nível superior.
 
-Desta forma, este estudo busca aplicar e avaliar comparativamente diferentes algoritmos de aprendizado supervisionado (Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors, Naïve Bayes, Support Vector Machine e Redes Neurais) como modelos preditivos de evasão. Serão usadas métricas como acurácia, precisão, recall, F1-Score e AUC (Área sob a curva) para identificar o modelo de melhor desempenho e, assim, contribuir para a elaboração de estratégias de retenção mais eficazes e acertadas, mitigando os efeitos da evasão estudantil no ensino superior em computação brasileiro.
+Desta forma, este estudo busca aplicar e avaliar comparativamente diferentes algoritmos de aprendizado supervisionado (Regressão Logística, Árvores de Decisão, Random Forest, K-Nearest Neighbors, Naïve Bayes, Support Vector Machine e Redes Neurais) como modelos preditivos de evasão. Foram usadas as métricas de acurácia, precisão, recall, F1-Score e AUC (Área sob a curva) para identificar os três modelos de melhor desempenho, que foram submetidos a uma análise mais aprofundada, buscando melhorar o treinamento e os resultados obtidos, almejando contribuir com a elaboração de estratégias de retenção mais eficazes e acertadas, que mitiguem os efeitos da evasão estudantil no ensino superior em computação brasileiro.
 
+\section{Trabalhos Relacionados}
+O desafio da evasão estudantil é um problema recorrente e complexo, com impactos acadêmicos, sociais e econômicos para as instituições e para os alunos. Diante do volume crescente de dados educacionais, o uso de técnicas de Mineração de Dados (MD) e Aprendizado de Máquina (ML) vem se consolidando por sua aplicação em múltiplos trabalhos, sendo usados para desenvolver modelos preditivos que auxiliem na redução da evasão.
 
-\section{Fundamentos Teóricos}
-Esta seção apresenta os principais algoritmos supervisionados empregados na modelagem
-preditiva da evasão estudantil. São descritos seus fundamentos conceituais, hipóteses e
-características práticas de uso em contextos de classificação.
+A seguir, apresenta-se uma análise comparativa detalhada entre a metodologia proposta no presente trabalho e os seis artigos de referência.
 
-\subsection{Regressão Logística}
-A Regressão Logística é um algoritmo supervisionado voltado para classificação que transforma combinações lineares de atributos em probabilidades por meio da função sigmoide. Observações são, então, classificadas com base em um limiar (de geralmente 0,5), sendo adequado para problemas de classificação binária ou multinomial. Assume-se independência entre observações, baixa multicolinearidade e relação linear entre variáveis independentes e log-odds. É simples, eficiente e de fácil interpretação, sendo a referência inicial ao se pensar em tarefas de classificação.
-
-\subsection{Árvores de Decisão}
-As Árvores de Decisão são algoritmos supervisionados usados para classificação e regressão, estruturados em nós internos (testes), ramos (resultados) e folhas (classes finais). A escolha de atributos é feita via Ganho de Informação ou Índice de Gini, que reduzem a impureza dos nós. Um desafio comum é o sobreajuste (\textit{overfitting}), mitigado por técnicas de pre-pruning ou post-pruning. São intuitivas, fáceis de implementar e base para algoritmos mais complexos como Random Forest e Gradient Boosting.
-
-\subsection{Random Forest}
-A Random Forest combina múltiplas árvores de decisão, construídas a partir de subconjuntos aleatórios de dados e atributos, levando a previsões por votação ou média. Essa estratégia reduz o sobreajuste, expande a importância das variáveis, garante robustez e alta precisão. Entre suas vantagens estão a alta acurácia, resistência ao overfitting e capacidade de lidar com dados faltantes. Suas desvantagens incluem o custo computacional elevado e menor interpretabilidade. É um dos algoritmos de referência em aprendizado supervisionado.
-
-\subsection{k-Nearest Neighbors (kNN)}
-O k-Nearest Neighbors (kNN) é um algoritmo não paramétrico usado para classificação e regressão, baseado na proximidade de pontos no espaço de atributos. A classe de um ponto é definida pela maioria de seus k vizinhos mais próximos (ou média, no caso de regressão). É um lazy learner, pois armazena os exemplos de treinamento e realiza cálculos apenas no momento da predição. A escolha do valor de k é crítica, para um equilíbrio entre viés e variância. Com sua simplicidade, flexibilidade e fácil interpretação, o kNN é amplamente utilizado em problemas supervisionados.
-
-\subsection{Naïve Bayes}
-O Naïve Bayes aplica o Teorema de Bayes assumindo independência entre os atributos. Estima a probabilidade posterior de uma classe dado um conjunto de características e seleciona aquela de maior probabilidade a posteriori (MAP). É eficiente e rápido, sendo amplamente utilizado em filtragem de spam, análise de sentimentos e classificação textual. Principais variantes: Gaussiana (atributos contínuos com distribuição normal), Multinomial (frequência de eventos, comum em textos) e Bernoulli (atributos binários). Sua simplicidade e baixo custo computacional o tornam uma opção clássica em tarefas de classificação.
-
-\subsection{Support Vector Machines (SVM)}
-As Support Vector Machines (SVM) buscam construir um hiperplano que maximize a margem entre classes. Os support vectors são os pontos mais próximos do hiperplano e definem sua posição. Quando os dados não são linearmente separáveis, aplica-se o chamado kernel trick, projetando-os em um espaço de maior dimensão. Kernels comuns incluem Linear, Polinomial, RBF e Sigmoide. As SVMs possuem alta capacidade preditiva e excelente desempenho em alta dimensionalidade, mas exigem ajuste de hiperparâmetros (C e \(\gamma\)) e podem ser computacionalmente custosas em grandes bases de dados.
-
-\subsection{Linear Discriminant Analysis (LDA)}
-A Análise Discriminante Linear (LDA) é um método supervisionado baseado em estatística multivariada que busca projetar os dados em um subespaço de menor dimensão, maximizando a separabilidade entre classes. Assume normalidade multivariada das variáveis independentes, covariâncias iguais entre classes e independência condicional. O LDA fornece fronteiras lineares e boa interpretabilidade. É frequentemente usado como caso base para comparar com modelos de maior complexidade.
-
-\subsection{Quadratic Discriminant Analysis (QDA)}
-A Análise Discriminante Quadrática (QDA) é uma extensão do LDA que relaxa a suposição de igualdade das matrizes de covariância entre classes, permitindo fronteiras de decisão não lineares. Essa flexibilidade aumenta a capacidade de adaptação do modelo a distribuições complexas, porém com maior risco de sobreajuste em bases pequenas (o que não é o caso no presente trabalho). Assim como o LDA, o QDA se baseia em estimativas de média e covariância, sendo indicado quando há diferença significativa na dispersão entre grupos.
-
-\subsection{Redes Neurais – Perceptron Multicamadas (MLP)}
-O Perceptron Multicamadas (MLP) é uma rede neural feedforward utilizada para classificação e regressão, composta por camadas de neurônios de entrada, ocultas e de saída. Cada neurônio combina entradas ponderadas e aplica uma função de ativação (sigmoid, ReLU ou tanh), permitindo modelar relações não lineares complexas. O treinamento é feito via backpropagation com gradiente descendente, ajustando pesos para minimizar a função de perda. O MLP é sensível à normalização, à taxa de aprendizado e à arquitetura da rede, podendo sofrer overfitting — mitigado por regularização, dropout ou parada antecipada. É amplamente aplicado em reconhecimento de padrões, previsão de séries temporais, classificação tabular, recomendação e processamento de linguagem natural.
-
-
-% >>> Guardar para possivelmente usar futuramente, sub-sub-sessões
-%\subsubsection{Section Titles}
-
-% >>> Guardado sobre tabelas <<<
-%Tables (e.g., \autoref{tab:one}) must be positioned preferably
-
-\iffalse % Usado para que o compilador ignore.
-         % Essencialmente comentar este trecho
-    \begin{table}[h]
-    	\caption{Caption table 1}
-    	\label{tab:one}
-    	\centering\footnotesize%
-    	\begin{tabular}{|c|c|}
-    		\hline
-    		\rowcolor{gray} \textbf{Example column 1} & \textbf{Example column 2}\\
-    		\hline
-    		Example text 1 & Example text 2\\
-    		\hline
-    	\end{tabular}
-    \end{table}
-
-
-    % >>> Comentado para possível uso futuro, figuras <<<
-    % Figures (e.g., \autoref{fig:one}) must appear inside the designated margins. 
-    
-    \begin{figure}[h]
-    	\centerline{\includegraphics[scale=0.25]{newlogo.png}}
-    	\caption{Caption figure 1}
-    	\label{fig:one}
-    \end{figure}
-
-    % >>> Comentável para possível uso futuro, equações
-    % Special attention with equations as some characters may be lost as well as formatting. Equations (e.g., \autoref{eq:one}) should be placed on a separate line, numbered and centered. 
-    
-    \begin{equation}
-    	a = b + c
-    	\label{eq:one}
-    \end{equation}
-
-    % >>> Usado para quando quiser adicionar código ao artigo <<<
-    % Program listing commands in text (e.g., \autoref{code:one}) should be set in 9-point Courier New,
-    \begin{code}[h]
-    	\begin{lstlisting}
-    begin
-        Writeln('Hello World!!');
-    end.
-    	\end{lstlisting}
-    	\caption{Example of code}
-    	\label{code:one}
-    \end{code}
-
-
-    % Subsessão sobre citações.
-    \subsection{In-Text Citations and Reference List}
-    
-    When you use others' ideas in your paper, you should credit them with an in-text citation. In-text citations must follow APA 7 Style, which consist of the surname of the authors and the year of publication. More on \href{https://apastyle.apa.org/}{Writing In-Text Citations in APA Style}, please refer to \href{https://libguides.brenau.edu/APA7}{APA Citation Guide (7th edition)}.
-    
-    The  \href{https://libguides.brenau.edu/APA7}{APA Citation Guide (7th edition)} explains why and what to cite, citing references in text, the purpose of the reference list and how to build the reference list. It is possible to find more information on  \href{https://libguides.brenau.edu/APA7}{APA Citation Guide (7th edition)} and on how to deal with missing information as well as class notes, class lectures, presentations, social media, among other sources. Some sample references are provided by the  \href{https://libguides.brenau.edu/APA7}{APA Citation Guide (7th edition)}.
-    
-    The reference list must be ordered alphabetically. References should be set to 12-point, justified, with a single line space, 6-point additional spacing after and hanging indent of 0.75 centimeter.
-    
-    Citation 1 \parencite{Baker2011}
-    
-    Citation 2 \parencite{Seffrin2013}
-    
-    Citation 3 \parencite{Brasil2008}
-    
-    Citation 4 \parencite{Kautzman2015}
-    
-    Citation 5 \parencite{Sweller1991}
-    
-    Citation 6 \parencite{Clark2006}
-    
-    Citation 7 \parencite{Mason2012}
-\fi % Fim do bloco comentado
-
-
-\section{Metodologia}
-Foi adotado o CRISP-DM (\textit{Cross Industry Standard Process for Data Mining}) como estrutura de análise. O processo foi iterativo, abrangendo: entendimento do negócio e dos dados, preparação, modelagem, avaliação e definição.
-
-\begin{figure}[h]
-    \centerline{\includegraphics[scale=2.6]{images/CRISP-DM_Process_Diagram.png}}
-    \caption{Etapas do processo CRISP-DM. \cite{crispdm}}
-    \label{fig:one}
-\end{figure}
-
-\subsection{Entendimento do Negócio}
-O objetivo foi identificar fatores associados à evasão estudantil em cursos presenciais de bacharelado em computação, utilizando microdados do INEP 2023. Definiu-se a variável alvo \mbox{target\_evadiu} (1 = evadido, 0 = não evadido), permitindo formular o problema como uma tarefa de classificação binária.
-
-\subsection{Entendimento dos Dados}
-O conjunto obtido na plataforma PNP foi filtrado para incluir apenas cursos de computação presenciais. Foram exploradas distribuições, tipos de variáveis e tratados valores ausentes; variáveis categóricas foram inspecionadas via tabelas de frequência e associação (Cramér’s V e qui-quadrado), enquanto variáveis numéricas foram analisadas por histogramas, boxplots e correlação de Pearson com a variável alvo.
-
-\subsection{Preparação dos Dados}
-As etapas incluíram:
-
-\begin{itemize}
-  \item \textbf{Filtragem e limpeza:} remoção de colunas irrelevantes (identificadores, agregados regionais etc.).
-  
-  \item \textbf{Conversão temporal:} extração de ano, mês e semestre a partir de datas de início e matrícula.
-  
-  \item \textbf{Engenharia de atributos:} criação de \mbox{Duracao\_Prevista}, \mbox{Tempo\_ate\_Matricula}, \mbox{Mes\_Inicio} e \mbox{Semestre\_Ocorrencia}.
-  
-  \item \textbf{Pré-processamento:} imputação (\textit{median} para numéricas, \mbox{\textit{most\_frequent}} para categóricas), padronização (StandardScaler) e codificação (OneHotEncoder/OrdinalEncoder) via \\ \mbox{ColumnTransformer}.
-  
-  \item \textbf{Balanceamento:} uso de SMOTETomek para mitigar desbalanceamento da variável-alvo no conjunto de treino.
-\end{itemize}
-
-\subsection{Modelagem}
-Foram testados nove algoritmos dentro de um ImbPipeline: Logistic Regression, Decision Tree, Random Forest, SVM (RBF), KNN, Naive Bayes, LDA, QDA e MLP. Cada modelo foi avaliado com divisão estratificada train\_test\_split (70/30).
-
-\subsection{Avaliação}
-As métricas calculadas incluíram Accuracy, Precision, Recall, F1-score e ROC-AUC. Após o treino inicial, procedeu-se ao ajuste de limiar de decisão para cada modelo (otimização via curva Precision–Recall) visando maximizar o F1-score. Matrizes de confusão e curvas de desempenho foram geradas para análise comparativa.
-
-\subsection{Interpretação e Importância de Variáveis}
-Modelos com atributos interpretáveis tiveram suas importâncias de variáveis ou coeficientes extraídos e ranqueados. As variáveis temporais e institucionais mostraram maior relevância, indicando a influência do tempo até matrícula e a duração prevista sobre a probabilidade de evasão.
-
-
-\section{Análise Comparativa de Metodologias para Predição de Evasão Estudantil}
-O desafio da evasão estudantil é um problema recorrente e complexo, com impactos acadêmicos, sociais e econômicos para as instituições e para os alunos. Diante do volume crescente de dados educacionais, o uso de técnicas de Mineração de Dados (MD) e Aprendizado de Máquina (ML) vem se consolidando como estratégia eficaz para desenvolver modelos preditivos que auxiliem na redução da evasão.
-
-A seguir, apresenta-se uma análise comparativa detalhada entre a metodologia proposta no artigo preliminar (“Previsão da evasão de alunos de cursos de computação no Brasil usando Aprendizado de Máquina”) e os seis artigos de referência.
-
-\newpage
 
 \subsection{Metodologia de Mineração de Dados}
 
@@ -315,8 +165,7 @@ A seguir, apresenta-se uma análise comparativa detalhada entre a metodologia pr
     \bottomrule
 \end{longtable}
 
-O presente artigo adota uma metodologia empírica de ML para classificação, em sintonia com a prática observada nos estudos. A escolha do CRISP-DM em \cite{jesus2024mapeamento} e o uso do KDD em \cite{ramos2018comparativo} demonstram o alinhamento com metodologias formais de Descoberta de Conhecimento em Bancos de Dados. O ponto de maior diferenciação é o trabalho de \cite{neves2024ficare}, que eleva o nível da proposta ao criar um framework customizado (FICARE) que inclui a coleta de dados não apenas de sistemas acadêmicos (ERP/AVA) mas também de questionários de escuta ativa (dados subjetivos/textuais).
-
+O presente artigo adota uma metodologia empírica de aprendizado de máquina para classificação, em sintonia com a prática observada nos estudos. A escolha do CRISP-DM em \cite{jesus2024mapeamento} e o uso do KDD em \cite{ramos2018comparativo} demonstram o alinhamento com metodologias formais de Descoberta de Conhecimento em Bancos de Dados. O ponto de maior diferenciação é o trabalho de \cite{neves2024ficare}, que eleva o nível da proposta ao criar um framework customizado (FICARE) que inclui a coleta de dados não apenas de sistemas acadêmicos (ERP/AVA) mas também de questionários de escuta ativa (dados subjetivos/textuais).
 
 \newpage
 \subsection{Contexto de Dados e Escopo}
@@ -331,7 +180,7 @@ O presente artigo adota uma metodologia empírica de ML para classificação, em
     \textbf{Artigo} & \textbf{Fonte de Dados} & \textbf{Escopo do Estudo} & \textbf{Observações e Características Relevantes} \\
     \midrule
     \endhead
-    Nosso artigo & Plataforma Nilo Peçanha (PNP) / Censo da Educação Superior (INEP). & Ensino Superior, cursos de computação na Rede Federal. & Visa generalização nacional. \\ \hline
+    Nosso artigo & Plataforma Nilo Peçanha (PNP) & Ensino Superior, cursos de computação na Rede Federal. & Visa generalização nacional. \\ \hline
     
     Jesus \& Gusmão (2024) & Bases bibliográficas diversas. & Ensino superior presencial. & Revelou predominância de estudos no ensino superior e falta de padronização nos conjuntos de atributos utilizados e nas métricas aplicadas para avaliar a evasão. \\ \hline
     
@@ -347,9 +196,9 @@ O presente artigo adota uma metodologia empírica de ML para classificação, em
     \bottomrule
 \end{longtable}
 
-O presente estudo faz uso do Censo da Educação Superior do Inep, alinhando-se diretamente com o objetivo de generalização e reutilização de modelos (H2) proposto por \cite{jesus2024mapeamento}. A maioria dos trabalhos focam em dados internos e específicos de uma única IES (\cite{ramos2018comparativo}, \cite{neves2024ficare}) ou em plataformas de larga escala (MOOCs, \cite{tamada2025predicting}). A escolha do Censo Inep (dados governamentais padronizados) na prévia é uma força metodológica para o escopo nacional e para a proposta de criar modelos reutilizáveis.
+O presente estudo faz uso da Plataforma Nilo Peçanha (PNP), com dados das instituições de ensino superior federais brasileiras, alinhando-se diretamente com o objetivo de generalização e reutilização de modelos (H2) proposto por \cite{jesus2024mapeamento}. A maioria dos trabalhos focam em dados internos e específicos de uma única instituição de ensino superior (IES) (\cite{ramos2018comparativo}, \cite{neves2024ficare}) ou em plataformas de larga escala (MOOCs, \cite{tamada2025predicting}). A escolha do PNP (dados governamentais padronizados) é uma força metodológica para o escopo nacional e para a proposta de criar modelos reutilizáveis.
 
-
+\newpage
 \subsection{Algoritmos e Métricas de Avaliação}
 
 \begin{longtable}{|p{3cm}|p{3.5cm}|p{4.5cm}|p{5cm}|}
@@ -362,13 +211,13 @@ O presente estudo faz uso do Censo da Educação Superior do Inep, alinhando-se 
     \textbf{Artigo} & \textbf{Algoritmos de ML Principais} & \textbf{Métricas de Avaliação} & \textbf{Modelo Vencedor/Destaque} \\
     \midrule
     \endhead
-    Nosso artigo & Regressão Logística (LR), Árvores de Decisão (DT), Random Forest (RF), K-Nearest Neighbors (KNN), Naïve Bayes (NB), Support Vector Machine (SVM), Redes Neurais (MLP). & Acurácia, Precisão, Recall, F1-Score, AUC. & Análise comparativa. \\ \hline
+    Nosso artigo & Regressão Logística (LR), Árvores de Decisão (DT), Random Forest (RF), K-Nearest Neighbors (kNN), Naïve Bayes (NB), Support Vector Machine (SVM), Redes Neurais (MLP), Análise Discriminante Linear (LDA) e Quadratic Discriminant Analysis (QDA). & Acurácia, Precisão, Recall, F1-Score, AUC. & Análise comparativa com três modelos se destacando: Random Forest, Support Vector Machine (SVM) e K-Nearest Neighbors (kNN). Destes, Random Forest apresentou o melhor resultado \\ \hline
     
     Jesus \& Gusmão (2024) & DT (35), LR (27), SVM (22), RF (25), Redes Neurais (20). & Acurácia, Curva ROC (no mapeamento). & Árvore de Decisão é o mais frequentemente utilizado. \\ \hline
     
     Jesus (2024) & LR, DT, RF, SVM. & VP, VN, FP, FN, Acurácia, Precisão, Recall, Especificidade. & Decision Tree (DT) (Acurácia de 0,979 para EAD Pública). \\ \hline
     
-    Ramos et al. (2018) & DT, SVM, NeuralNet, KNN, RegLog. & Precisão, Recall, Acurácia, AUC. & Regressão Logística (Acurácia de 0,894; Recall mais alto: 0,617). \\ \hline
+    Ramos et al. (2018) & DT, SVM, NeuralNet, kNN, RegLog. & Precisão, Recall, Acurácia, AUC. & Regressão Logística (Acurácia de 0,894; Recall mais alto: 0,617). \\ \hline
     
     Tamada et al. (2019) & LR, SVM, DT, DL, RNN/LSTM (mais usados: LR e SVM). & Acurácia (ACC). & Varia (DL, RF, SVM, RNN/LSTM), com SVM/Deep Learning apresentando alta acurácia (99,64\%). \\ \hline
     
@@ -378,14 +227,13 @@ O presente estudo faz uso do Censo da Educação Superior do Inep, alinhando-se 
     \bottomrule
 \end{longtable}
 
+\newpage
 O presente trabalho propõe a testagem de um conjunto abrangente de algoritmos de classificação supervisionada, refletindo a diversidade observada na literatura (\cite{jesus2024mapeamento}, \cite{tamada2025predicting}).
 
-Embora a Decision Tree (DT) seja o algoritmo mais frequentemente utilizado (\cite{jesus2024mapeamento}), o Random Forest (RF) emerge como o mais robusto em algumas revisões (\cite{andradegiron2023predicting}), e a Regressão Logística (LR) se destaca pela interpretabilidade (\cite{ramos2018comparativo}) e alta precisão em alguns cenários de EAD.
+Embora a Decision Tree (DT) seja o algoritmo mais frequentemente utilizado (como em \cite{jesus2024mapeamento}), o Random Forest (RF) emerge como o mais robusto em algumas revisões (\cite{andradegiron2023predicting}), com uma conclusão semelhante no presente trabalho; além de a Regressão Logística (LR) se destacar pela interpretabilidade (\cite{ramos2018comparativo}) e pela alta precisão em alguns cenários de EAD.
 
 Todos os trabalhos usam as métricas básicas (Acurácia, Precisão, Recall). No entanto, a proposta de \cite{neves2024ficare} de incluir F-measure (média harmônica de precisão e recall) e G-means (média geométrica de recall e especificidade) é crucial para lidar com bases de dados desbalanceadas (onde os casos de evasão/reprovação são minoritários), garantindo que o modelo não seja enviesado para a classe majoritária (não-evadidos/aprovados). A inclusão dessas métricas na prévia é um ponto forte para a avaliação científica.
 
-
-\newpage
 \subsection{Variáveis Mais Influentes}
 
 A escolha dos atributos é um passo crítico do processo KDD/CRISP-DM.
@@ -400,7 +248,7 @@ A escolha dos atributos é um passo crítico do processo KDD/CRISP-DM.
     \textbf{Artigo} & \textbf{Variáveis Mais Relevantes / Foco} & \textbf{Relevância para o Artigo Preliminar} \\
     \midrule
     \endhead
-    Nosso artigo & Variáveis demográficas, socioeconômicas e acadêmicas do Censo Inep. & Totalmente alinhado, pois o Censo do Inep é a fonte declarada e possui essa taxonomia de dados. \\ \hline
+    Nosso artigo & Variáveis demográficas, socioeconômicas e acadêmicas da base PNP. & Totalmente alinhado. \\ \hline
     
     Jesus (2024) & IN\_CONCLUINTE (aluno no último período) e CO\_ALUNO\_SITUACAO (situação de vínculo). & Crucial: Estas variáveis do Censo (INEP) são identificadas como as mais importantes em todos os cenários (EAD/Presencial, Público/Privado). A prévia deve focar na extração e análise dessas features do Censo. \\ \hline
     
@@ -412,14 +260,14 @@ A escolha dos atributos é um passo crítico do processo KDD/CRISP-DM.
     \bottomrule
 \end{longtable}
 
-Diferente da maioria dos estudos de caso (\cite{ramos2018comparativo}, \cite{neves2024ficare}), o uso do Censo Inep em um recorte de cursos de Computação (Ensino Superior) permite a criação e avaliação de um modelo preditivo com base de dados padronizada em nível nacional (como proposto por \cite{jesus2024mapeamento}), mitigando o problema da não-reutilização de modelos entre diferentes IES (H2 verdadeira em \cite{jesus2024mapeamento}).
+Diferente da maioria dos estudos de caso (\cite{ramos2018comparativo}, \cite{neves2024ficare}), o uso da base PNP em um recorte de cursos de Computação (Ensino Superior) permite a criação e avaliação de um modelo preditivo com base de dados padronizada em nível nacional (como proposto por \cite{jesus2024mapeamento}), mitigando o problema da não-reutilização de modelos entre diferentes IES (H2 verdadeira em \cite{jesus2024mapeamento}).
 
-A inclusão de métricas como F1-Score e AUC no presente trabalho o posiciona em um nível de avaliação robusta, necessário para bases desbalanceadas, superando o uso exclusivo de métricas menos informativas (como apenas Acurácia) que podem mascarar o baixo desempenho na classe minoritária (evadidos).
+A inclusão de métricas como F1-Score e AUC no presente trabalho o posiciona em um nível de avaliação robusto, necessário para bases desbalanceadas, superando o uso exclusivo de métricas menos informativas (como apenas Acurácia) que podem mascarar o baixo desempenho na classe minoritária (evadidos).
 
-O conjunto de sete algoritmos testados é mais amplo do que a maioria dos trabalhos de comparação, garantindo que o modelo "vencedor" seja o mais robusto.
+O conjunto de nove algoritmos testados é mais amplo do que a maioria dos trabalhos de comparação, garantindo que os modelos "vencedores" sejam os mais robustos.
 
 
-\subsection{Conclusão da Análise Comparativa}
+\subsection{Síntese da Análise Comparativa}
 
 \begin{longtable}{|p{7cm}|p{8cm}|}
     \caption{Síntese comparativa final}\\
@@ -431,22 +279,57 @@ O conjunto de sete algoritmos testados é mais amplo do que a maioria dos trabal
     \textbf{Ponto Forte do presente trabalho} & \textbf{Comparativo com a Literatura} \\
     \midrule
     \endhead
-    Uso da Base Inep (Censo da Educação Superior) & Alinhado com a proposta de \cite{jesus2024dissertacao} para reutilização e padronização nacional, e se diferencia dos estudos de caso localizados (\cite{ramos2018comparativo}) ou de plataformas específicas (\cite{tamada2025predicting}). \\ \hline
+    Uso da Base PNP & Alinhado à proposta de \cite{jesus2024dissertacao} para reutilização e padronização nacional, e se diferencia dos estudos de caso localizados (\cite{ramos2018comparativo}) ou de plataformas específicas (\cite{tamada2025predicting}). \\ \hline
 
-    Metodologia de ML Abrangente & O teste de sete algoritmos supervisionados é um procedimento robusto, apoiado pelo mapeamento de \cite{jesus2024mapeamento} e pela busca de algoritmos de melhor desempenho (\cite{andradegiron2023predicting}). \\ \hline
+    Metodologia de aprendizado de máquina (ML) Abrangente & O teste dos nove algoritmos supervisionados é um procedimento robusto, apoiado pelo mapeamento de \cite{jesus2024mapeamento} e pela busca de algoritmos de melhor desempenho (\cite{andradegiron2023predicting}). \\ \hline
     
     Métricas de Avaliação Robustas (F1-Score, AUC) & Essencial para lidar com o desbalanceamento de classes, metodologia apoiada pela análise de \cite{neves2024ficare}. \\
     \bottomrule
 \end{longtable}
 
-O atual trabalho contribui para a literatura preenchendo a lacuna de um modelo preditivo nacionalmente padronizado para cursos de computação. A identificação das métricas mais relevantes (como as já destacadas por \cite{jesus2024mapeamento}) dentro do contexto dos cursos de computação será o principal resultado prático, orientando intervenções institucionais.
+O atual trabalho contribui para a literatura preenchendo a lacuna de um modelo preditivo nacionalmente padronizado para cursos de computação. A identificação das métricas mais relevantes (como as já destacadas por \cite{jesus2024mapeamento}) dentro do contexto dos cursos de computação será o principal resultado prático, com potencial de orientar intervenções institucionais.
 
 
-\section{Engenharia de Atributos e Exploração Inicial}
+\section{Metodologia}
 
-\subsection{Engenharia de Atributos}
+\subsection{Fonte dos Dados}
+Os dados foram obtidos na Plataforma Nilo Peçanha, que oferta-os como parte da política do Estado brasileiro de fornecer dados abertos sobre a administração pública brasileira à população geral. Eles dizem respeito às instituições federais brasileiras, que ofertam ensino básico, profissional e de nível superior. Há uma vasta gama de cursos de computação na rede federal brasileira, sendo bastante oportuna a escolha desta base de dados para o presente trabalho.
+
+A PNP também apresenta dados individuais de cada aluno matriculado nas Instituições Federais (com o devido respeito à Lei Geral de Proteção de Dados dos dados coletados e disponibilizados), tornando possível a aplicação de aprendizado de máquina para casos individuais de evasão, em contraponto a bases como a do Inep, que apesar de também trazer dados de relevância, entregam informações mais a nível institucional de cada universidade e curso, com apenas o número de ingressantes e concluíntes para cada curso, na qual é possível derivar os números de evasão, mas não sendo granular o bastante para um trabalho que visa investigar e tratar casos individuais.
+
+\subsection{Metodologia utilizada}
+Foi adotado o CRISP-DM (\textit{Cross Industry Standard Process for Data Mining}) como estrutura de análise. O processo foi iterativo, abrangendo: entendimento do negócio e dos dados, preparação, modelagem, avaliação e definição.
+
+\begin{figure}[h]
+    \centerline{\includegraphics[scale=2.6]{images/CRISP-DM_Process_Diagram.png}}
+    \caption{Etapas do processo CRISP-DM. \cite{crispdm}}
+    \label{fig:one}
+\end{figure}
+
+\subsubsection{Entendimento do Negócio}
+O objetivo foi identificar fatores associados à evasão estudantil em cursos presenciais de bacharelado em computação, utilizando microdados da Plataforma Nilo Peçanha. Definiu-se a variável alvo \mbox{target\_evadiu} (1 = evadido, 0 = não evadido), permitindo formular o problema como uma tarefa de classificação binária.
+
+\subsubsection{Entendimento dos Dados}
+O conjunto obtido na plataforma PNP foi filtrado para incluir apenas cursos de computação presenciais. Foram exploradas distribuições, tipos de variáveis e tratados valores ausentes; variáveis categóricas foram inspecionadas via tabelas de frequência e associação (Cramér’s V e qui-quadrado), enquanto variáveis numéricas foram analisadas por histogramas, boxplots e correlação de Pearson com a variável alvo.
+
+\subsubsection{Preparação dos Dados}
+As etapas incluíram:
+
+\begin{itemize}
+  \item Filtragem e limpeza: remoção de colunas irrelevantes (identificadores, agregados regionais etc.).
+  
+  \item Conversão temporal: extração de ano, mês e semestre a partir de datas de início e matrícula.
+  
+  \item Engenharia de atributos: criação de \mbox{Duracao\_Prevista}, \mbox{Tempo\_ate\_Matricula}, \mbox{Mes\_Inicio} e \mbox{Semestre\_Ocorrencia}.
+  
+  \item Pré-processamento: imputação (\textit{median} para numéricas, \mbox{\textit{most\_frequent}} para categóricas), padronização (StandardScaler) e codificação (OneHotEncoder/OrdinalEncoder) via \\ \mbox{ColumnTransformer}.
+  
+  \item Balanceamento: uso de SMOTETomek para mitigar desbalanceamento da variável-alvo no conjunto de treino.
+\end{itemize}
+
+\subsubsection{Engenharia de Atributos}
 O processo de preparação envolveu a transformação sistemática dos microdados da Plataforma Nilo Peçanha (PNP) em um conjunto estruturado e analiticamente consistente.  
-Inicialmente, foi criada a variável alvo \mbox{target\_evadiu}, codificando a evasão de forma binária (1 = evadido, 0 = não evadido), a partir da coluna Categoria da Situação. Essa etapa converteu informações textuais sobre situação acadêmica em formato adequado à modelagem supervisionada.
+Inicialmente, foi criada a variável alvo \mbox{target\_evadiu}, codificando a evasão de forma binária (1 = evadido, 0 = não evadido), a partir da coluna Categoria da Situação. Esta etapa converteu informações textuais sobre situação acadêmica em formato adequado à modelagem supervisionada.
 
 Posteriormente, aplicaram-se filtros para restringir o escopo aos cursos presenciais de bacharelado exclusivamente da área de Computação, contemplando: Análise e Desenvolvimento de Sistemas, Ciência da Computação, Computação, Engenharia de Computação, Engenharia de Telecomunicações, Gestão da Tecnologia da Informação, Informática, Jogos Digitais, Redes de Computadores, Sistemas de Informação, Sistemas para Internet, Telemática e Agrocomputação.  
 Essa filtragem assegura a homogeneidade do domínio e elimina registros de cursos não correlatos.
@@ -454,60 +337,60 @@ Essa filtragem assegura a homogeneidade do domínio e elimina registros de curso
 Variáveis redundantes, administrativas ou descritivas foram removidas, preservando apenas atributos relevantes ao perfil discente e à trajetória acadêmica. As variáveis temporais (Data de Início do Ciclo, Data de Fim Previsto do Ciclo e Data de Ocorrência da Matrícula) foram convertidas para o tipo datetime e utilizadas para gerar novos atributos derivados:
 
 \begin{itemize}
-    \item \textbf{Duração Prevista}: diferença em dias entre as datas de início e término previstas do ciclo;
-    \item \textbf{Tempo até Matrícula}: intervalo entre o início do curso e a data efetiva da matrícula;
-    \item \textbf{Mês de Início} e \textbf{Semestre de Ocorrência}: atributos categóricos derivados das datas, refletindo sazonalidade e períodos de ingresso;
-    \item \textbf{Ano-Mês de Ocorrência}: representação temporal útil para análise agregada e variações anuais.
+    \item \textit{Duração Prevista}: diferença em dias entre as datas de início e término previstas do ciclo;
+    \item \textit{Tempo até Matrícula}: intervalo entre o início do curso e a data efetiva da matrícula;
+    \item \textit{Mês de Início} e \textit{Semestre de Ocorrência}: atributos categóricos derivados das datas, refletindo sazonalidade e períodos de ingresso;
+    \item \textit{Ano-Mês de Ocorrência}: representação temporal útil para análise agregada e variações anuais.
 \end{itemize}
 
 Essas variáveis capturam dimensões cronológicas e institucionais que influenciam o risco de evasão, enriquecendo o espaço de atributos e permitindo modelagem mais interpretável. Após a derivação, as colunas originais de data foram removidas para evitar redundância e colinearidade.
 
-\subsection{Exploração Inicial}
+\newpage
+\subsection{Análise Descritiva}
 
 Na fase exploratória, as variáveis numéricas foram inspecionadas individualmente por meio de histogramas e boxplots, identificando padrões de distribuição, assimetrias e outliers.
 
 \begin{figure}[H]\centering
     \includegraphics[width=1\textwidth]{images/descritivo-idade.png}
-    \caption{Distribuição e boxplot da variável Idade.}
+    \caption{Distribuição e boxplot da variável Idade}
     \label{fig:idade}
 \end{figure}
 
 \begin{figure}[H]\centering
 	\includegraphics[width=1\textwidth]{images/descritivo-carga-horaria.png}
-	\caption{Distribuição e boxplot da variável Carga Horária.}
+	\caption{Distribuição e boxplot da variável Carga Horária}
 	\label{fig:carga-horaria}
 \end{figure}
 
 \begin{figure}[H]\centering
 	\includegraphics[width=1\textwidth]{images/descritivo-inscritos.png}
-	\caption{Distribuição e boxplot da variável Total de Inscritos.}
+	\caption{Distribuição e boxplot da variável Total de Inscritos}
 	\label{fig:total-inscritos}
 \end{figure}
 
-As análises evidenciam distribuições assimétricas com concentração dos valores em faixas específicas e presença de outliers representando casos atípicos. A idade apresenta forte concentração entre 18 e 25 anos, enquanto a carga horária e o número de inscritos exibem maior dispersão entre instituições.
+As análises evidenciam distribuições assimétricas com concentração dos valores em faixas específicas e presença de outliers representando casos atípicos. A idade apresenta forte concentração entre 18 e 25 anos, enquanto a carga horária e o número de inscritos exibem maior dispersão entre as instituições.
 
 A seguir, avaliaram-se as correlações lineares entre variáveis numéricas e a variável alvo (\mbox{target\_evadiu}), além das correlações entre as próprias variáveis numéricas:
 
 \begin{figure}[H]\centering
 	\includegraphics[width=1\textwidth]{images/correlacao_variaveis_num_com_target.jpeg}
-	\caption{Correlação entre variáveis numéricas e a variável alvo \mbox{(target\_evadiu)}.}
+	\caption{Correlação entre variáveis numéricas e a variável alvo \mbox{(target\_evadiu)}}
 	\label{fig:corr-num-target}
 \end{figure}
 
 \begin{figure}[H]\centering
 	\includegraphics[width=1\textwidth]{images/matriz-corr.png}
-	\caption{Matriz geral de correlação entre variáveis numéricas.}
+	\caption{Matriz geral de correlação entre variáveis numéricas}
 	\label{fig:corr-num-geral}
 \end{figure}
 
 
-\subsection{Análise das Variáveis Categóricas}
-
+\subsubsection{Análise das Variáveis Categóricas}
 Investigou-se as variáveis categóricas e sua relação com a evasão, utilizando o teste qui-quadrado e o coeficiente de associação Cramér’s V. Para cada atributo, são apresentados os resultados tabulares e os respectivos histogramas comparativos com a variável alvo.
 
 \begin{table}[H]
 	\centering
-	\caption{Associação entre Turno e evasão.}
+	\caption{Associação entre Turno e evasão}
 	\label{tab:cat-turno}
 	\begin{tabular}{lcc}
 		\toprule
@@ -523,13 +406,13 @@ Investigou-se as variáveis categóricas e sua relação com a evasão, utilizan
 
 \begin{figure}[H]\centering
 	\includegraphics[width=0.8\textwidth]{images/evasao-turno.jpeg}
-	\caption{Distribuição de evasão por Turno.}
+	\caption{Distribuição de evasão por Turno}
 	\label{fig:cat-turno-hist}
 \end{figure}
 
 \begin{table}[H]
 	\centering
-	\caption{Associação entre Região e evasão.}
+	\caption{Associação entre Região e evasão}
 	\label{tab:cat-regiao}
 	\begin{tabular}{lcc}
 		\toprule
@@ -546,13 +429,13 @@ Investigou-se as variáveis categóricas e sua relação com a evasão, utilizan
 
 \begin{figure}[H]\centering
 	\includegraphics[width=0.8\textwidth]{images/evasao-municipio.jpeg}
-	\caption{Distribuição de evasão por Região.}
+	\caption{Distribuição de evasão por Região}
 	\label{fig:cat-regiao-hist}
 \end{figure}
 
 \begin{table}[H]
 	\centering
-	\caption{Associação entre Faixa Etária e evasão.}
+	\caption{Associação entre Faixa Etária e evasão}
 	\label{tab:cat-faixa}
 	\begin{tabular}{lcc}
 		\toprule
@@ -574,13 +457,13 @@ Investigou-se as variáveis categóricas e sua relação com a evasão, utilizan
 
 \begin{figure}[H]\centering
 	\includegraphics[width=0.8\textwidth]{images/evasao-faixa-etara.jpeg}
-	\caption{Distribuição de evasão por Faixa Etária.}
+	\caption{Distribuição de evasão por Faixa Etária}
 	\label{fig:cat-faixa-hist}
 \end{figure}
 
 \begin{table}[H]
 	\centering
-	\caption{Associação entre Curso e evasão.}
+	\caption{Associação entre Curso e evasão}
 	\label{tab:cat-curso}
 	\begin{tabular}{lcc}
 		\toprule
@@ -598,242 +481,278 @@ Investigou-se as variáveis categóricas e sua relação com a evasão, utilizan
 
 \begin{figure}[H]\centering
 	\includegraphics[width=0.8\textwidth]{images/evasao-nome-curso.jpeg}
-	\caption{Distribuição de evasão por Curso.}
+	\caption{Distribuição de evasão por Curso}
 	\label{fig:cat-curso-hist}
 \end{figure}
 
 As análises categóricas revelam padrões distintos de evasão entre regiões, turnos e cursos, indicando que fatores institucionais e contextuais exercem influência significativa sobre o comportamento de permanência dos estudantes.
 
 
-\section{Modelagem e Avaliação}
+\subsection{Fundamentação Teórica dos Modelos Usados}
+Apresentamos os fundamentos conceituais, hipóteses e características práticas para uso em contextos de classificação.
 
-\subsection{Visão geral do processo}
+\subsubsection{Regressão Logística}
+A Regressão Logística é um algoritmo supervisionado voltado para classificação que transforma combinações lineares de atributos em probabilidades por meio da função sigmoide. Observações são, então, classificadas com base em um limiar (de geralmente 0,5), sendo adequado para problemas de classificação binária ou multinomial. Assume-se independência entre observações, baixa multicolinearidade, relação linear entre variáveis independentes e log-odds. É simples, eficiente e de fácil interpretação, sendo a referência inicial ao se pensar em trabalhos de classificação.
 
-Aplicamos um fluxo padrão de aprendizado supervisionado: (i) preparação dos dados com imputação, padronização e codificação; (ii) balanceamento do conjunto de treino; (iii) treinamento de múltiplos classificadores; (iv) avaliação no conjunto de teste. O foco foi comparar desempenho preditivo em vez de detalhar hiperparâmetros. Todas as métricas foram calculadas com limiar de decisão padrão ($0{,}5$), salvo indicação em contrário.
+\subsubsection{Árvores de Decisão}
+As Árvores de Decisão são algoritmos supervisionados usados para classificação e regressão, estruturados em nós internos (testes), ramos (resultados) e folhas (classes finais). A escolha de atributos é feita via Ganho de Informação ou Índice de Gini, que reduzem a impureza dos nós. Um desafio comum é o sobreajuste (\textit{overfitting}), mitigado por técnicas de pre-pruning ou post-pruning. São intuitivas, fáceis de implementar e base para algoritmos mais complexos como Random Forest e Gradient Boosting.
 
-\subsection{Procedimento de avaliação}
-A avaliação priorizou F1-score, Recall e ROC-AUC. As matrizes de confusão são apresentada aos pares.
+\subsubsection{Random Forest}
+A Random Forest combina múltiplas árvores de decisão, construídas a partir de subconjuntos aleatórios de dados e atributos, levando a previsões por votação ou média. Essa estratégia reduz o sobreajuste, expande a importância das variáveis, garante robustez e alta precisão. Entre suas vantagens estão a alta acurácia, resistência ao overfitting e capacidade de lidar com dados faltantes. Suas desvantagens incluem o custo computacional elevado e menor interpretabilidade. É um dos algoritmos de referência em aprendizado supervisionado.
 
-\begin{figure}[H]\centering
-    \includegraphics[width=1\textwidth]{images/matrizes-confusao-log-dec.png}
-    \caption{Matrizes de confusão para Regressão Logística e Árvore de Decisão. Threshold = 0{,}5.}
-    \label{fig:cms-a}
-\end{figure}
+\subsubsection{k-Nearest Neighbors (kNN)}
+O k-Nearest Neighbors (kNN) é um algoritmo não paramétrico usado para classificação e regressão, baseado na proximidade de pontos no espaço de atributos. A classe de um ponto é definida pela maioria de seus k vizinhos mais próximos (ou média, no caso de regressão). É um lazy learner, pois armazena os exemplos de treinamento e realiza cálculos apenas no momento da predição. A escolha do valor de k é crítica para um equilíbrio entre viés e variância. Com sua simplicidade, flexibilidade e fácil interpretação, o kNN é amplamente utilizado em problemas supervisionados.
 
-\begin{figure}[H]\centering
-    \includegraphics[width=1\textwidth]{images/matrizes-confusao-for-svm.png}
-    \caption{Matrizes de confusão para Random Forest e SVM. Threshold = 0{,}5.}
-    \label{fig:cms-b}
-\end{figure}
+\subsubsection{Naïve Bayes}
+O Naïve Bayes aplica o Teorema de Bayes assumindo independência entre os atributos. Estima a probabilidade posterior de uma classe dado um conjunto de características e seleciona aquela de maior probabilidade a posteriori (MAP). É eficiente e rápido, sendo amplamente utilizado em filtragem de spam, análise de sentimentos e classificação textual. Principais variantes: Gaussiana (atributos contínuos com distribuição normal), Multinomial (frequência de eventos, comum em textos) e Bernoulli (atributos binários). Sua simplicidade e baixo custo computacional o tornam uma opção clássica em tarefas de classificação.
 
-\begin{figure}[H]\centering
-    \includegraphics[width=1\textwidth]{images/matrizes-confusao-mlp-knn.png}
-    \caption{Matrizes de confusão para MLP e kNN. Threshold = 0{,}5.}
-    \label{fig:cms-c}
-\end{figure}
+\subsubsection{Support Vector Machines (SVM)}
+As Support Vector Machines (SVM) buscam construir um hiperplano que maximize a margem entre classes. Os support vectors são os pontos mais próximos do hiperplano e definem sua posição. Quando os dados não são linearmente separáveis, aplica-se o chamado kernel trick, projetando-os em um espaço de maior dimensão. Kernels comuns incluem Linear, Polinomial, RBF e Sigmoide. As SVMs possuem alta capacidade preditiva e excelente desempenho em alta dimensionalidade, mas exigem ajuste de hiperparâmetros (C e \(\gamma\)) e podem ser computacionalmente custosos em grandes bases de dados.
 
-\begin{figure}[H]\centering
-    \includegraphics[width=1\textwidth]{images/matrizes-confusao-lda-qda.png}
-    \caption{Matrizes de confusão para LDA e QDA. Threshold = 0{,}5.}
-    \label{fig:cms-d}
-\end{figure}
+\subsubsection{Linear Discriminant Analysis (LDA)}
+A Análise Discriminante Linear (LDA) é um método supervisionado baseado em estatística multivariada que busca projetar os dados em um subespaço de menor dimensão, maximizando a separabilidade entre classes. Assume normalidade multivariada das variáveis independentes, covariâncias iguais entre classes e independência condicional. O LDA fornece fronteiras lineares e boa interpretabilidade. É frequentemente usado como caso base para comparar com modelos de maior complexidade.
 
-\begin{figure}[htbp]\centering
-	\includegraphics[width=0.6\textwidth]{images/matriz-confusao-naive-bayes.jpeg}
-	\caption{Matriz de confusão para Naive Bayes. Threshold = 0{,}5.}
-	\label{fig:cms-nb}
-\end{figure}
+\subsubsection{Quadratic Discriminant Analysis (QDA)}
+A Análise Discriminante Quadrática (QDA) é uma extensão do LDA que relaxa a suposição de igualdade das matrizes de covariância entre classes, permitindo fronteiras de decisão não lineares. Essa flexibilidade aumenta a capacidade de adaptação do modelo a distribuições complexas, porém com maior risco de sobreajuste em bases pequenas (o que não é o caso no presente trabalho). Assim como o LDA, o QDA se baseia em estimativas de média e covariância, sendo indicado quando há diferença significativa na dispersão entre grupos.
+
+\subsubsection{Redes Neurais – Perceptron Multicamadas (MLP)}
+O Perceptron Multicamadas (MLP) é uma rede neural feedforward utilizada para classificação e regressão, composta por camadas de neurônios de entrada, ocultas e de saída. Cada neurônio combina entradas ponderadas e aplica uma função de ativação (sigmoid, ReLU ou tanh), permitindo modelar relações não lineares complexas. O treinamento é feito via backpropagation com gradiente descendente, ajustando pesos para minimizar a função de perda. O MLP é sensível à normalização, à taxa de aprendizado e à arquitetura da rede, podendo sofrer overfitting — mitigado por regularização, dropout ou parada antecipada. É amplamente aplicado em reconhecimento de padrões, previsão de séries temporais, classificação tabular, recomendação e processamento de linguagem natural.
+
+\subsection{Modelagem}
+Os nove algoritmos foram testados dentro de um ImbPipeline, com cada modelo avaliado usando divisão estratificada train\_test\_split (70/30).
+
+\subsubsection{Avaliação}
+As métricas calculadas incluíram Acurácia, Precisão, Recall, F1-score e ROC-AUC. Após o treino inicial, procedeu-se ao ajuste de limiar de decisão para cada modelo (otimização via curva Precisão–Recall) visando maximizar o F1-score. Matrizes de confusão e curvas de desempenho foram geradas para análise comparativa.
+
+\subsubsection{Importância e Interpretação das Variáveis}
+Modelos com atributos interpretáveis tiveram suas importâncias de variáveis ou coeficientes extraídos e ranqueados. As variáveis temporais e institucionais mostraram maior relevância, indicando a influência do tempo até matrícula e a duração prevista sobre a probabilidade de evasão.
+
+\subsection{Processo para Treino dos Nove Modelos Gerados}
+
+Foi aplicado um fluxo padrão de aprendizado supervisionado: (i) preparação dos dados com imputação, padronização e codificação; (ii) balanceamento do conjunto de treino; (iii) treinamento de múltiplos classificadores; (iv) avaliação no conjunto de teste. O foco foi comparar desempenho preditivo em lugar de detalhar hiperparâmetros. Todas as métricas foram calculadas com limiar de decisão padrão ($0{,}5$), salvo indicação em contrário.
 
 
-\subsection{Comparação global dos modelos}
+\section{Discussão}
+
+\subsection{Resultados e Comparação dos Nove Modelos}
 
 \begin{table}[H]
-	\centering
-	\caption{Comparação de desempenho entre modelos com threshold padrão (0,5).}
-	\label{tab:comparacao-global}
-	\begin{tabular}{lrrrrr}
-	\toprule
-	\textbf{Modelo} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{ROC-AUC} \\
-	\midrule
-	SVM                  & 0.719964 & 0.282235 & 0.609907 & 0.385896 & 0.734610 \\
-	Random Forest        & 0.838767 & 0.389535 & 0.207430 & 0.270707 & 0.710035 \\
-	KNN                  & 0.686318 & 0.255794 & 0.615067 & 0.361322 & 0.706743 \\
-	Logistic Regression  & 0.649397 & 0.227594 & 0.597523 & 0.329633 & 0.679301 \\
-	LDA                  & 0.647462 & 0.227078 & 0.600619 & 0.329558 & 0.678253 \\
-	MLP                  & 0.769987 & 0.275351 & 0.364293 & 0.313638 & 0.668567 \\
-	Decision Tree        & 0.798720 & 0.301554 & 0.300310 & 0.300931 & 0.594230 \\
-	Naive Bayes          & 0.221081 & 0.150057 & 0.943240 & 0.258924 & 0.588279 \\
-	QDA                  & 0.216019 & 0.152177 & 0.970072 & 0.263084 & 0.549362 \\
-	\bottomrule
-	\end{tabular}
+    \centering
+    \caption{Comparação de desempenho entre modelos com threshold padrão (0,5)}
+    \label{tab:comparacao-global}
+    \begin{tabular}{lccccc}
+        \toprule
+        Modelo & Acurácia & Precisão & Recall & F1-score & ROC-AUC \\
+        \midrule
+        Random Forest & 0.6868 & 0.6866 & 0.6873 & 0.6869 & 0.7433 \\
+        SVM & 0.6703 & 0.6849 & 0.6305 & 0.6566 & 0.7339 \\
+        kNN & 0.6718 & 0.6711 & 0.6739 & 0.6725 & 0.7297 \\
+        MLP & 0.6418 & 0.6333 & 0.6718 & 0.6519 & 0.7090 \\
+        LDA & 0.6311 & 0.6411 & 0.5955 & 0.6174 & 0.6963 \\
+        Logistic Regression & 0.6290 & 0.6389 & 0.5934 & 0.6153 & 0.6961 \\
+        Naive Bayes & 0.6182 & 0.5876 & 0.7926 & 0.6749 & 0.6734 \\
+        Decision Tree & 0.6218 & 0.6294 & 0.5924 & 0.6103 & 0.6264 \\
+        QDA & 0.5346 & 0.5191 & 0.9381 & 0.6684 & 0.5739 \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
+A Tabela \ref{tab:comparacao-global} resume o desempenho dos modelos. Random Forest apresentou os melhores F1-score (0,687), ROC-AUC (0,743) e Precisão (0,687), ficando em terceira posição em se tratando de Recall, atrás do QDA e também do Naive Bayes. Em muitos valores, SVM e kNN aparecem próximos de Random Forest, com excessão do Recall e F1-socre da SVM (0,63 e 0,657 respectivamente), apresentando-se abaixo de outros tantos modelos. Naive Bayes e QDA exibiram recall muito alto, porém com queda acentuada em acurácia; percebe-se também que ambos concentram as suas predições na classe positiva, inviabilizando seu uso prático. Esses achados reforçam que, em bases desbalanceadas, a escolha do limiar e a métrica de avaliação são decisivas.
 
-\subsection{Importância de variáveis e interpretabilidade}
+\subsubsection{Discussão sobre os Nove Modelos}
+Nos modelos lineares, foi possível observar efeito etário não linear: aumento de risco entre 20–24 anos e nova elevação em faixas acima de 45 anos. Indicadores institucionais e regionais também aparecem com peso. Características demográficas específicas (p. ex.: cor/raça e sexo) e variáveis acadêmico-administrativas (carga horária mínima) apresentam associação relevante com a evasão.
 
-Para modelos com explicabilidade direta, reportamos as 20 variáveis mais relevantes. As importâncias refletem diferentes noções de influência: impureza média reduzida em árvores/ensembles e coeficientes em modelos lineares.
+Para modelos baseados em árvores, percebeu-se indícios de que a Idade se apresenta como a variável mais importante, seguida de renda familiar (faixas até 1 RFP e não declarada), cor/raça, sexo e variáveis relacionadas ao tempo (datas de ocorrência/encerramento do ciclo, duração prevista e tempo até matrícula). Há de se notar também que, ao avaliar os três melhores modelos adiante, com a Random Forest sendo um deles, as variáveis apresentaram mudanças na sua ordem e importância.
 
-\begin{figure}[H]\centering
-	\includegraphics[width=1\textwidth]{images/top20-random-forest.jpeg}
-	\caption{Random Forest: 20 variáveis mais importantes.}
-	\label{fig:feat-rf}
-\end{figure}
+Para além disso, itens de contexto competitivo (total de inscritos e vagas regulares) também apresentaram contribuição relevante, sugerindo que a pressão por vagas e perfis discente-institucionais também afetam a permanência. Esses achados são coerentes com a literatura sobre preditores demográficos e acadêmicos.
 
-\begin{figure}[H]\centering
-    \includegraphics[width=1\textwidth]{images/top20-decision-tree.jpeg}
-    \caption{Árvore de Decisão: 20 variáveis mais importantes.}
-    \label{fig:feat-dt}
-\end{figure}
+Os fatores-alvo identificados para intervenção foram Idade, faixas de renda familiar baixa/não declarada, cor/raça, sexo, distância necessária para chegar à instituição e pressão por vagas: todos citados aparecem de maneira consistente nos modelos. Políticas de permanência devem considerar apoio financeiro, flexibilidade acadêmica para perfis mais vulneráveis e monitoramento do tempo de deslocamento dos alunos às instituições, que em algumas situações pode ser remediado com moradia estudantil próxima às faculdades.
 
-\begin{figure}[H]\centering
-    \includegraphics[width=1\textwidth]{images/top20-regr-log.jpeg}
-    \caption{Regressão Logística: 20 coeficientes de maior magnitude.}
-    \label{fig:feat-lr}
-\end{figure}
+\subsection{Os Três Melhores Modelos}
+Visando melhorar os valores obtidos para a Random Forest, kNN e SVM, fez-se uso de mais técnicas na busca de melhorar os valores de F1-Score, curva ROC, Acurácia, Precisão e Recall dos três modelos. Detalhes sobre eles são aprofundados adiante.
 
-\begin{figure}[H]\centering
-    \includegraphics[width=1\textwidth]{images/top20-lda.jpeg}
-    \caption{LDA: 20 coeficientes de maior magnitude.}
-    \label{fig:feat-lda}
-\end{figure}
+\subsubsection{Validação Cruzada}
+A validação cruzada (k-fold cross validation) é um método para avaliar modelos de forma mais estável e menos dependente da divisão específica de treino e teste. Esta foi uma das técnicas de aprimoramento aplicada aos três algoritmos de melhor desempenho.
+
+Seu fundamento está em:
+
+\begin{enumerate}
+    \item divide-se o conjunto de treino em $k$ partes (folds);
+    \item treina-se o modelo em $k-1$ partes;
+    \item testa-se na parte restante;
+    \item repete-se o processo $k$ vezes, alternando o fold usado para teste;
+    \item calcula-se a média das métricas.
+\end{enumerate}
+
+Neste trabalho, usou-se a validação cruzada estratificada, preservando a proporção das classes em todos os folds.
+
+\subsubsection{Grid Search}
+
+O Grid Search é um procedimento de busca exaustiva pelo melhor conjunto de hiperparâmetros para um modelo. Sua lógica se estrutura em:
+
+\begin{enumerate}
+    \item Definem-se listas de valores possíveis para cada hiperparâmetro.
+    \item Gera-se automaticamente todas as combinações possíveis.
+    \item Cada combinação é avaliada usando validação cruzada.
+    \item A combinação com melhor métrica (neste caso, F1-score) é selecionada.
+\end{enumerate}
+
+É um método computacionalmente custoso, mas garante a busca completa dentro do espaço definido.
+
+
+\subsection{Aplicação de Nova Metodologia para os Modelos que Melhor Performaram}
+Os modelos Random Forest, SVM e kNN foram os de melhor desempenho na etapa anterior do presente trabalho, afirmação que pode ser observada na Tabela \ref{tab:comparacao-global}. Eles, então, foram submetidos a um novo tratamento, começando pelos dados usados. As diferenças são apresentadas adiante.
+
+\subsubsection{Adaptações na Base de Dados e sua Preparação}
+Os microdados da base PNP foram readaptados para o desenho dos modelos a serem aprimorados.
+
+Como ponto de atenção, percebeu-se que a distribuição da variável binária de interesse possuia forte desbalanço, com 83,68\% de não evadidos e somente 16,32\% de evadidos.
+
+Este desbalanceamento induziria os modelos a priorizarem a classe majoritária, contrário ao objetivo proposto. Então, buscando mitigar tal fato, foi aplicada a técnica de under-sampling, resultando em uma redução da base de dados de alunos de computação:
+
+\begin{verbatim}
+Classe 1 (evadido) = 3229 registros
+Classe 0 (não evadido) = 3229 registros
+\end{verbatim}
+
+A base final totalizou, então, 6.458 registros. Embora com acentuada redução de tamanho, o objetivo de balancear a base foi alcançado, permitindo a realização de uma avaliação equânime entre as classes.
+
+\subsubsection{Engenharia de Atributos}
+A engenharia de atributos foi essencial para elevar o desempenho dos modelos. Foram criadas as seguintes variáveis temporais: duração prevista do ciclo (em dias), tempo até a matrícula, ano e mês de início e semestre de ocorrência. Estas variáveis representam aspectos temporais que influenciam o engajamento no curso, a organização acadêmica e o ritmo de progressão do aluno.
+
+Além disso, a variável "Instituição" foi desconsiderada devido à alta cardinalidade, o que elevaria exponencialmente o número de colunas após aplicação de one-hot encoding, o que poderia causar sobreajuste nos modelos treinados.
+
+\subsection{Riscos de Overfitting e Model Drift}
+
+Na busca de melhorias no desempenho do modelo, foi fundamental considerar os riscos associados ao overfitting. Ajustes excessivos de hiperparâmetros, uso de modelos demasiadamente complexos ou experimentação não controlada poderiam resultar em um modelo que se adapta extremamente bem ao conjunto de dados atual, mas perde capacidade de generalização.
+
+Um modelo com muito overfitting tende a capturar ruído, padrões esporádicos e características específicas do conjunto de treino, o que reduz sua robustez quando novos dados são disponibilizados. Em contextos educacionais, esse problema é especialmente relevante, pois o perfil dos alunos e os fatores que influenciam a evasão podem mudar ao longo do tempo.
+
+Esse fenômeno está relacionado ao chamado model drift, que ocorre quando a distribuição dos dados muda significativamente em relação ao que foi visto no treinamento. Se o modelo for excessivamente ajustado ao comportamento atual, mesmo pequenas mudanças futuras — como alterações no perfil socioeconômico dos ingressantes, mudanças institucionais ou políticas acadêmicas — poderão reduzir rapidamente seu desempenho.
+
+Portanto, embora seja desejável melhorar o modelo continuamente, é necessário manter um equilíbrio entre complexidade e generalização. O objetivo não é obter a maior performance possível no conjunto de dados atual, mas sim desenvolver um modelo que seja estável, de melhor interpretação e resiliente a pequenas variações nos dados. Em aplicações reais, modelos ligeiramente menos precisos, porém mais generalizáveis, tendem a ter melhor desempenho de longo prazo e menor necessidade de retrabalho.
+
+\subsection{Resultados Obtidos}
+
+\subsubsection{Hiperparâmetros Ajustados para cada Modelo}
+
+\begin{longtable}{m{4cm} m{10cm}}
+\caption{Hiperparâmetros dos Modelos Treinados}\\
+\toprule
+\textbf{Modelo} & \textbf{Hiperparâmetros} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Modelo} & \textbf{Hiperparâmetros} \\
+\midrule
+\endhead
+
+Random Forest &
+\begin{verbatim}
+n_estimators = 600
+max_depth = 40
+min_samples_split = 10
+\end{verbatim}
+\\[0.2cm]
+
+SVM &
+\begin{verbatim}
+C = 10
+gamma = scale
+\end{verbatim}
+\\[0.2cm]
+
+kNN &
+\begin{verbatim}
+n_neighbors = 7
+weights = distance
+\end{verbatim}
+\\
+
+\bottomrule
+\end{longtable}
+
+Em se tratando da Random Forest, mais árvores reduzem a variância; uma maior profundidade permite capturar relações de maior complexidade; e um \textit{min\_samples\_split} mais alto evita divisões excessivamente específicas, reduzindo o overfitting.
+
+Quanto ao SVM, valores mais altos de $C$ penalizam mais erros, ajustando margens a padrões raros de evasão.
+
+E para o kNN, o modelo passa a considerar mais fortemente vizinhos imediatos, capturando melhor relações locais.
+
+
+\subsubsection{Resultados Refinados}
+
+Após aplicação do GridSearchCV, os resultados podem ser observados na Tabela~\ref{tab:tuned}:
+
+\begin{table}[H]
+    \centering
+    \caption{Resultados Após Ajustes}
+    \label{tab:tuned}
+    \begin{tabular}{lccccc}
+        \toprule
+        Modelo & Accuracy & Precision & Recall & F1-score & ROC-AUC \\
+        \midrule
+        Random Forest & 0.7043 & 0.7045 & 0.7038 & 0.7042 & 0.7647 \\
+        SVM & 0.6847 & 0.6830 & 0.6894 & 0.6862 & 0.7494 \\
+        KNN & 0.6662 & 0.6649 & 0.6698 & 0.6674 & 0.7233 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Mesmo com melhorias significativas, o desempenho máximo encontrado (F1-score de 0,704 no modelo Random Forest) parece próximo do limite possível para este dataset, por algumas ausências percebidas, como a falta de variáveis socioeconômicas mais ricas e variáveis de desempenho acadêmico mais granulares para cada aluno (suas notas, frequências, reprovações etc). Além disso, foi detectado ruído institucional nos microdados da PNP, que, somado ao under-sampling aplicado, por definição levou à redução da informação disponível.
 
 \newpage
-\section{Resultados e Discussão}
-
-\subsection{Desempenho global dos modelos}
-
-A Tabela 10 resume o desempenho dos modelos. O SVM apresentou o melhor F1-score (0,386) e ROC-AUC mais alto (0,735), indicando melhor compromisso entre precisão e sensibilidade. A Random Forest obteve a maior accuracy (0,839), porém com recall baixo (0,207), refletindo postura conservadora na detecção de evadidos. O KNN alcançou recall elevado (0,615) com precision modesta. Naive Bayes e QDA exibiram recall muito alto, porém com queda acentuada em accuracy e F1, sugerindo viés para a classe positiva. Esses achados reforçam que, em bases desbalanceadas, a escolha do limiar e a métrica de avaliação são decisivas.
-
-\begin{table}[H]
-	\centering
-	\caption{Comparação de desempenho entre modelos com threshold padrão (0,5).}
-	\label{tab:comparacao-global}
-	\begin{tabular}{lrrrrr}
-	\toprule
-	M\textbf{odelo} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{ROC-AUC} \\
-	\midrule
-	SVM                  & 0.719964 & 0.282235 & 0.609907 & 0.385896 & 0.734610 \\
-	Random Forest        & 0.838767 & 0.389535 & 0.207430 & 0.270707 & 0.710035 \\
-	KNN                  & 0.686318 & 0.255794 & 0.615067 & 0.361322 & 0.706743 \\
-	Logistic Regression  & 0.649397 & 0.227594 & 0.597523 & 0.329633 & 0.679301 \\
-	LDA                  & 0.647462 & 0.227078 & 0.600619 & 0.329558 & 0.678253 \\
-	MLP                  & 0.769987 & 0.275351 & 0.364293 & 0.313638 & 0.668567 \\
-	Decision Tree        & 0.798720 & 0.301554 & 0.300310 & 0.300931 & 0.594230 \\
-	Naive Bayes          & 0.221081 & 0.150057 & 0.943240 & 0.258924 & 0.588279 \\
-	QDA                  & 0.216019 & 0.152177 & 0.970072 & 0.263084 & 0.549362 \\
-	\bottomrule
-	\end{tabular}
-\end{table}
+\subsection{Melhor Modelo: Random Forest em maiores detalhes}
+O modelo de Random Forest foi o que alcançou os melhores resultados após o aprofundamento nos três melhores. É possível observar as vinte variáveis de maior relevância ao modelo na Figura \ref{fig:top20}.
 
 
-\subsection{Matrizes de confusão e erros típicos}
-
-As matrizes da Figura~\ref{fig:cm-grid} mostram os trade-offs. O SVM reduz falsos negativos frente a modelos lineares, à custa de mais falsos positivos. A Random Forest minimiza falsos positivos, mas perde sensibilidade. NB e QDA concentram predições na classe positiva, inviabilizando uso prático.
-
-\begin{figure}[H]\centering
-    \includegraphics[width=1\textwidth]{images/todas-matrizes.png}
-    \caption{Matrizes de confusão no conjunto de teste.}
-    \label{fig:cm-grid}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth, angle=270]{images/top20-random-forest.png}
+    \caption{Top 20 variáveis mais importantes segundo o Random Forest}
+    \label{fig:top20}
 \end{figure}
 
-\subsection{Importância e sinais das variáveis}
 
-As Figuras~\ref{fig:feat-lr} e~\ref{fig:feat-lda} mostram os coeficientes dos modelos lineares. Observa-se efeito etário não linear: aumento de risco em 20–24 anos e nova elevação em faixas acima de 45 anos. Indicadores institucionais e regionais também aparecem com peso. Características demográficas específicas (p. ex.: cor/raça e sexo) e variáveis acadêmico-administrativas (carga horária mínima) têm associação relevante com a evasão.
+\section{Conclusão e Trabalhos Futuros}
 
-Para modelos baseados em árvores, as Figuras~\ref{fig:feat-rf} e~\ref{fig:feat-dt} indicam Idade como variável mais importante, seguida de renda familiar (faixas até 1 RFP e não declarada), cor/raça, sexo e variáveis temporais (datas de ocorrência/encerramento do ciclo, duração prevista e tempo até matrícula). Itens de contexto competitivo (total de inscritos e vagas regulares) também contribuem, sugerindo que pressão por vagas e perfis discente-institucionais afetam a permanência. Esses achados são coerentes com a literatura sobre preditores demográficos e acadêmicos.
+\subsection{Possibilidade de intervenções personalizadas}
 
+O grupo se atentou ao método SHAP (SHapley Additive exPlanations), que permite quantificar a contribuição individual de cada atributo para a decisão do modelo em cada aluno.
 
-\subsection{Implicações práticas e síntese}
+Seu funcionamento baseia-se na teoria dos jogos:
 
-Objetivando um modelo para alerta precoce. Se a prioridade é sensibilidade, o SVM é candidato inicial. Ajuste de limiar ou calibração pode elevar recall mantendo precisão aceitável.
+\begin{itemize}
+I. Cada variável é tratada como um “jogador”. \\
+II. O valor SHAP indica quanto cada variável aumenta ou reduz a probabilidade prevista de evasão.\\
+III. Isso é feito para cada estudante individualmente.
+\end{itemize}
 
-Se o objetivo é um modelo para decisão conservadora. Quando o custo de falso positivo é alto, a Random Forest favorece maior precisão/acurácia, mesmo com recall menor.
+Isso possibilita a criação de intervenções personalizadas a cada aluno. Exemplos seriam:
 
-Os fatores-alvo identificados para intervenção foram: Idade, faixas de renda familiar baixa/não declarada, cor/raça, sexo, indicadores temporais do percurso e pressão por vagas. Todos citados aparecem de maneira consistente nos modelos. Políticas de permanência devem considerar apoio financeiro, flexibilidade acadêmica para perfis mais vulneráveis e monitoramento temporal das trajetórias.
+\begin{itemize}
+    \item se “tempo até matrícula” for a principal causa de risco, a instituição pode oferecer orientação acadêmica antecipada;
+    \item se “turno noturno” for associado ao risco, pode-se reforçar flexibilização de horários;
+    \item se “idade mais alta” for fator relevante, programas de acolhimento e adaptação podem ser mais eficazes;
+    \item se “renda familiar baixa” estiver entre os maiores fatores, aumento de assistência estudantil pode reduzir evasão;
+    \item se “município distante” aumentar risco, pode-se intensificar acesso a atividades remotas.
+\end{itemize}
 
-Como conclusão, os resultados apontam para um pipeline robusto e reprodutível. SVM e Random Forest lideram em desempenho sob objetivos distintos; variáveis demográficas, socioeconômicas e temporais são determinantes. A adoção institucional deve combinar escolha de modelo ao custo-erro e ações focalizadas sobre os fatores identificados.
-
-\section{Conclusões e Trabalhos Futuros}
-
-A aplicação de modelos preditivos à base de microdados de matrículas demonstra que é possível antecipar casos de evasão com desempenho satisfatório, especialmente quando se adotam processos cuidadosos de engenharia de atributos e balanceamento. Modelos de ensemble, como Random Forest, destacaram-se pela robustez frente a variáveis heterogêneas. Para trabalhos futuros, sugerimos: (i) incorporar informações socioeconômicas individuais, (ii) explorar modelos temporais que considerem sequências de matrículas ao longo dos anos e (iii) integrar indicadores de engajamento em ambientes virtuais, em linha com tendências identificadas na literatura.
-
-Como desdobramentos práticos, recomenda-se que instituições desenvolvam painéis de monitoramento que combinem métricas quantitativas e alertas qualitativos. A adoção de equipes multidisciplinares, com participação de analistas de dados, pedagogos e assistentes sociais, pode acelerar a tradução dos insights em planos de ação. Investir em formação docente para uso de dados educacionais também se revela estratégico, permitindo que cada curso identifique rapidamente mudanças de padrão e acione intervenções personalizadas.
-
-
-\iffalse
-    \cite{tamada2025predicting}
-    \cite{jesus2024mapeamento}
-    \cite{jesus2024dissertacao}
-    \cite{neves2024ficare}
-    \cite{andradegiron2023predicting}
-    \cite{ramos2018comparativo}
-\fi
+Desta maneira, em uma aplicação futura, o SHAP possibilitará transformar previsões em políticas personalizadas a cada indivíduo.
 
 
+\subsection{Considerações finais}
 
+A aplicação de modelos preditivos à base de microdados demonstra que é possível antecipar casos de evasão com desempenho satisfatório, especialmente quando se adotam processos cuidadosos de engenharia de atributos e balanceamento. Modelos de ensemble, como Random Forest, destacaram-se pela robustez frente a variáveis heterogêneas. Para trabalhos futuros, sugerimos: (i) incorporar informações socioeconômicas individuais dos alunos matriculados; (ii) explorar modelos temporais que considerem sequências de matrículas ao longo dos anos; e (iii) integrar indicadores de engajamento em ambientes virtuais, em linha com tendências apresentadas na literatura.
 
+Como desdobramentos práticos, recomenda-se que instituições desenvolvam painéis de monitoramento que combinem métricas quantitativas e alertas qualitativos. A adoção de equipes multidisciplinares, com participação de analistas de dados, pedagogos e assistentes sociais pode acelerar a tradução dos insights em planos de ação. Investir em formação docente para uso de dados educacionais também se revela estratégico, permitindo que cada curso identifique rapidamente mudanças de padrão e acione intervenções personalizadas.
 
+A nível técnico, recomenda-se o uso da técnica de oversampling SMOTE-Tomek, que gera dados "sintéticos", além de remover o ruído na fronteira de decisão, permitindo uma expansão controlada da base. Os dados expandidos podem, então, ser usados para novo treinamento dos modelos e possivelmente resultarem em melhorias nas métricas discutidas no presente trabalho. A técnica SHAP também se apresenta promissora, podendo direcionar intervenções personalizadas a cada aluno, cada turma, turno, instituição ou região. Gradient Boosting, com sua característica de poder superar Random Forests em dados tabulares também mostra-se digno de nota.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\iffalse % Usado para que o compilador ignore.
-         % Essencialmente comentar este trecho
-    \section*{Acknowledgements}
-    %Place the acknowledgements only in the final version of the manuscript, after acceptance. They should be placed before the references section without numbering.
-    Our special thanks to Rafael Bohrer Ávila, Matheus Segalotto and Bruno Fagundes da Silva for their help with this latex template. 
-\fi
-
-
-
-
-
+A apresentação das informações obtidas com clareza também mostra-se de suma importância. Plataformas de dashboards como PowerBI, Metabase ou Streamlit podem tornar os dados e informações acessíveis a tomadores de decisão, potencializando a eficiência do combate à evasão nos diferentes níveis do ensino superior brasileiro.
 
 \newpage
 \printbibliography
 %See the guidelines for metadata and references:
 %https://sol.sbc.org.br/journals/index.php/rbie/libraryFiles/downloadPublic/71
-
-
-\iffalse % Usado para que o compilador ignore.
-         % Essencialmente comentar este trecho
-     \section*{Appendix 1}
-    \label{apendice1}
-    
-    If any, the appendix should appear directly after the references without numbering, and not on a new page.
-    
-    \begin{enumerate}
-        \item[A] When the reference has a Link
-        \begin{itemize}
-            \item Make a clickable link on the respective URL (if you are using MS-Word, use the tool Insert Hyperlink, informing the URL).
-        \end{itemize}
-        \item[B] Allow readers to search for the reference on Google Scholar
-        \begin{itemize}
-            \item Copy the title of the reference and put in between ``\%22'', including the ``+'' character between each word: http://scholar.google.com/scholar?q=\%22PASTE+TITLE+\\HERE\%22\&hl=en\&lr=\&btnG=Search
-            \item If it is a common title, you may add the author, such as in: \\http://scholar.google.com/ scholar?q=PASTE+AUTHOR+HERE+\%22PASTE+TITLE\\+HERE\%22\&hl=en\&lr=\&btnG=Search
-            \item Or you may use the publication year (YEAR) to restrict the results, such as in:\\ http://scholar.google.com/scholar?
-            q=PASTE+AUTHOR+HERE+\%22PASTE+TITLE\\+HERE\%22\&hl=en\&lr=\&btnG=Search \&as\_ylo=YEAR\&as\_yhi=YEAR
-            \item It is highly advisable to confirm if the link is correct (and if Google Scholar presents a correct result).
-            \item Include the term ``[GS SEARCH]'' at the end of each reference and make “GS SEARCH” a hyperlink with the URL just created.
-        \end{itemize}
-        \item[C] Allow readers to access references with DOI
-        \begin{itemize}
-            \item Add DOI hyperlink (make it clickable) using the corresponding URL (the URL can be created adding ``http://doi.org/'' in front of the DOI hyperlink).
-        \end{itemize}
-    \end{enumerate}
-\fi
-
 
 \end{document}
